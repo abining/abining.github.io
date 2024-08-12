@@ -1,9 +1,9 @@
 # Site settings
-title: Hux Blog
+title: Ebin Blog
 SEOTitle: Ebin的博客 | abining Blog
 header-img: img/home-bg.jpg
 email: chouvelgis@gmail.com
-description: "这里是 @chouvel 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员"
+description: "这里是 @Ebin 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员"
 keyword: "abining, chouvel,@abining, chouvel的博客, chouvel Blog, 博客, 个人网站, 互联网, Web, JavaScript, Vue, Vite, 前端, 设计"
 url: "https://github.com/abining" # your host, for absolute URL
 baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
@@ -13,10 +13,10 @@ future: true
 
 # SNS settings
 RSS: false
-weibo_username: huxpro
-zhihu_username: huxpro
-github_username: huxpro
-twitter_username: huxpro
+# weibo_username: huxpro
+# zhihu_username: huxpro
+github_username: abining
+# twitter_username: huxpro
 #facebook_username:  huxpro
 #linkedin_username:  firstname-lastname-idxxxx
 
