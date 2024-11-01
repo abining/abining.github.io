@@ -1,0 +1,239 @@
+---
+layout: default
+---
+
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+                    <span class="subheading">{{ page.description }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <!-- 左侧简历内容 -->
+        <div class="col-lg-8 col-md-8 col-sm-12">
+            <div class="resume-content">
+                {{ content }}
+            </div>
+            
+            <!-- 下载按钮 -->
+            <div class="resume-download text-center">
+                <a href="{{ site.baseurl }}/resume/download" 
+                   class="btn btn-primary">
+                    <i class="fa fa-download"></i> 下载简历 PDF 版本
+                </a>
+            </div>
+        </div>
+
+        <!-- 右侧个人信息 -->
+        <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-12">
+            <div class="sidebar-container">
+                <!-- 个人头像 -->
+                <div class="short-about">
+                    <div class="avatar-container">
+                        <img src="{{ site.baseurl }}/img/avatar.png" alt="个人头像">
+                    </div>
+                    <h5>肖伊斌</h5>
+                    <div class="personal-info">
+                        <p><i class="fa fa-briefcase"></i> 前端开发工程师</p>
+                        <p><i class="fa fa-envelope"></i> 3094774079@qq.com</p>
+                        <p><i class="fa fa-phone"></i> 19550101724</p>
+                    </div>
+                </div>
+
+                <!-- 社交链接 -->
+                <div class="social-links">
+                    <a href="https://github.com/abining" target="https://github.com/abining" title="GitHub">
+                        <img src="{{ site.baseurl }}/img/icons/github.png" alt="github" class="custom-icon">
+                    </a>
+                    <a href="https://abining.github.io" target="https://abining.github.io" title="个人博客">
+                        <img src="{{ site.baseurl }}/img/icons/home.png" alt="个人博客" class="custom-icon">
+                    </a>
+                    <a href="https://juejin.cn/user/741495293092151" target="https://juejin.cn/user/741495293092151" title="掘金">
+                        <img src="{{ site.baseurl }}/img/icons/juejin.png" alt="掘金" class="custom-icon">
+                    </a>
+                    <a href="mailto:3094774079@qq.com" target="_blank" title="QQ邮箱">
+                        <img src="{{ site.baseurl }}/img/icons/email.png" alt="QQ邮箱" class="custom-icon">
+                    </a>
+                    <a href="mailto:chouvelgis.email@gmail.com" target="_blank" title="Gmail">
+                        <img src="{{ site.baseurl }}/img/icons/google.png" alt="Gmail" class="custom-icon">
+                    </a>
+                    <a href="javascript:;" class="wechat-link" title="微信">
+                        <img src="{{ site.baseurl }}/img/icons/wechat.png" alt="微信" class="custom-icon">
+                        <div class="wechat-qrcode">
+                            <img src="{{ site.baseurl }}/img/wechatconnect.png" alt="x3094774079" class="qr-code">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 添加一些自定义样式 -->
+<style>
+    .resume-content {
+        margin-bottom: 40px;
+    }
+    
+    .resume-download {
+        margin: 30px 0;
+    }
+    
+    .resume-download .btn {
+        padding: 15px 30px;
+        font-size: 18px;
+        border-radius: 4px;
+    }
+    
+    .resume-content h2 {
+        border-bottom: 2px solid #eee;
+        padding-bottom: 10px;
+        margin: 30px 0 20px;
+    }
+    
+    .resume-content h3 {
+        color: #666;
+        margin: 20px 0 15px;
+    }
+
+    /* 右侧边栏样式 */
+    .sidebar-container {
+        padding: 20px;
+        background: #fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        border-radius: 4px;
+    }
+
+    .short-about {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .avatar-container {
+
+        margin: 0 auto;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .avatar-container img {
+        width: 100% !important;
+        margin: 0 !important;
+        height: auto;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
+    }
+    .personal-info {
+        text-align: left;
+        margin-top: 20px;
+    }
+
+    .personal-info p {
+        margin: 10px 0;
+        color: #666;
+    }
+
+    .personal-info i {
+        width: 16px;
+        margin-right: 8px;
+        color: #999;
+    }
+
+    .social-links {
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px 0;
+        border-top: 1px solid #eee;
+    }
+
+    .social-links a {
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        border-radius: 50%;
+        background: #f5f5f5;
+        margin: 8px 8px;
+        color: #666;
+        transition: all 0.3s;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .social-links a:hover {
+        background: #0085a1;
+        transform: translateY(-2px);
+    }
+
+    .social-links a:hover .custom-icon {
+        filter: brightness(0) invert(1);
+    }
+
+    .social-links a:hover .fa-github {
+        color: #fff; /* GitHub保持白色 */
+    }
+
+    .social-links a:hover .fa-home {
+        color: #fff; /* 个人博客 */
+    }
+
+    .social-links a:hover .fa-book {
+        color: #fff; /* 掘金 */
+    }
+
+    .custom-icon {
+        width: 15px;
+        height: 15px;
+        vertical-align: middle;
+    }
+
+    .wechat-link {
+        position: relative;
+    }
+    
+    .wechat-qrcode {
+        display: none;
+        position: absolute;
+        bottom: 45px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        z-index: 1000;
+    }
+    
+    .wechat-qrcode::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid #fff;
+    }
+    
+    .qr-code {
+        width: 120px;
+        height: 120px;
+        display: block;
+    }
+    
+    .wechat-link:hover .wechat-qrcode {
+        display: block;
+    }
+</style> 

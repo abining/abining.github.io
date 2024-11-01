@@ -1,0 +1,28 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="0;url={{ site.baseurl }}/assets/resume/resume.pdf">
+    <script>
+        window.onload = function() {
+            // 触发下载
+            var link = document.createElement('a');
+            link.href = '{{ site.baseurl }}/assets/resume/resume.pdf';
+            link.download = '肖伊斌-前端开发.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // 3秒后返回简历页
+            setTimeout(function() {
+                window.location.href = '{{ site.baseurl }}/resume/';
+            }, 3000);
+        }
+    </script>
+</head>
+<body>
+    <p>正在下载简历，如果没有自动下载，<a href="{{ site.baseurl }}/assets/resume/resume.pdf" download="肖伊斌-前端开发.pdf">点击这里</a></p>
+</body>
+</html> 
