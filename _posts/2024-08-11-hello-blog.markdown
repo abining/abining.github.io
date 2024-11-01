@@ -3,11 +3,12 @@ layout:     post
 title:      "Hello github pages，hello huangxuan"
 subtitle:   " \"Hello World, Hello Blog\""
 date:       2024-08-11 12:00:00
-author:     "chouvel"
+author:     "Ebin"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
     - 面试准备
+    - 秋招
 ---
 
 ## 一、面试准备
