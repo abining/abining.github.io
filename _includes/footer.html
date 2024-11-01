@@ -328,3 +328,22 @@
         });
     });
 </script>
+
+<!-- Task List Interactive -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var checkboxes = document.querySelectorAll('.task-list-item input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            var label = this.nextElementSibling;
+            if (this.checked) {
+                label.style.textDecoration = 'line-through';
+                label.style.color = '#666';
+            } else {
+                label.style.textDecoration = 'none';
+                label.style.color = '';
+            }
+        });
+    });
+});
+</script>

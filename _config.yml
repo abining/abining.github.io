@@ -3,8 +3,8 @@ title: Ebin Blog
 SEOTitle: Ebin的博客 | abining Blog
 header-img: img/home-bg.jpg
 email: chouvelgis@gmail.com
-description: "这里是 @Ebin 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员"
-keyword: "abining, chouvel,@abining, chouvel的博客, chouvel Blog, 博客, 个人网站, 互联网, Web, JavaScript, Vue, Vite, 前端, 设计"
+description: "这里是 @abining 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员"
+keyword: "abining,@abining, Ebin的博客, Ebin Blog, 博客, 个人网站, 互联网, Web, JavaScript, Vue, Vite, 前端, 设计"
 url: "https://github.com/abining" # your host, for absolute URL
 baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -58,11 +58,20 @@ kramdown:
       line_numbers: true
       start_line: 1
 
-# Disqus settings
-disqus_username: hux
-
-# Netease settings
-netease_comment: false
+# Comments settings
+comment:
+  type: gitalk
+gitalk:
+  owner: abining              # 您的 GitHub 用户名
+  repo: blog-comments         # 存储评论的仓库
+  clientID: Ov23liVPjfbjiJPerHtP    # OAuth Application 的 Client ID
+  clientSecret: df6ec6c27c501a6e8272b83abcbc7de53b194193  # OAuth Application 的 Client Secret
+  admin: abining             # 管理员用户名
+  labels: ['Gitalk']         # GitHub issue 的标签
+  perPage: 15                # 每页评论数
+  pagerDirection: last       # 排序方式是从最新的评论开始
+  createIssueManually: true  # 如果当前页面没有相应的 issue，需要手动创建
+  distractionFreeMode: false # 是否启用无干扰模式
 
 # Analytics settings
 # Baidu Analytics
@@ -74,8 +83,8 @@ ga_domain: huangxuan.me
 
 # Sidebar settings
 sidebar: true # whether or not using Sidebar.
-sidebar-about-description: "要做一个有 swag 的程序员 <br> React Team @ Meta"
-sidebar-avatar: https://github.com/Huxpro.png # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "要做一个有 swag 的程序员 <br> 技术栈：Vue、Vite、React、TypeScript、Node.js"
+sidebar-avatar: https://github.com/abining.png # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
 featured-tags: true # whether or not using Feature-Tags
