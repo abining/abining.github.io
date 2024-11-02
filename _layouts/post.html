@@ -2,37 +2,41 @@
 layout: default
 ---
 
-<!-- Image to hack wechat -->
+<!-- 微信分享时的图片设置 -->
 <!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
 <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
 
-<!-- Post Header -->
+<!-- 文章头部区域 -->
 {% include intro-header.html type='post' %}
 
-<!-- Post Content -->
+<!-- 文章主体内容区域 -->
 <article>
     <div class="container">
         <div class="row">
 
-    <!-- Post Container -->
+    <!-- 左侧文章容器 -->
             <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                post-container">
+                col-lg-8 col-lg-offset-2    <!-- 大屏幕时的宽度和偏移 -->
+                col-md-10 col-md-offset-1   <!-- 中等屏幕时的宽度和偏移 -->
+                post-container">            <!-- 文章容器样式 -->
 
-                <!-- Multi-Lingual -->
+                <!-- 多语言选择器，如果文章支持多语言则显示 -->
                 {% if page.multilingual %}
                     {% include multilingual-sel.html %}
                 {% endif %}
 
+                <!-- 文章内容 -->
 				{{ content }}
 
+                <!-- 分隔线 -->
                 <hr style="visibility: hidden;">
+
+                <!-- 上一篇/下一篇文章导航 -->
                 <ul class="pager">
                     {% if page.previous.url %}
                     <li class="previous">
                         <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
-                        Previous<br>
+                        上一篇<br>
                         <span>{{page.previous.title}}</span>
                         </a>
                     </li>
@@ -40,112 +44,134 @@ layout: default
                     {% if page.next.url %}
                     <li class="next">
                         <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
-                        Next<br>
+                        下一篇<br>
                         <span>{{page.next.title}}</span>
                         </a>
                     </li>
                     {% endif %}
                 </ul>
+
+                <!-- 分隔线 -->
                 <hr style="visibility: hidden;">
 
+                <!-- Gitalk评论系统 -->
                 {% if site.comment.type == 'gitalk' %}
-                <div id="gitalk-container"></div>
+                <!-- <div id="gitalk-container"></div>
                 <script type="text/javascript">
                     var gitalk = new Gitalk({
-                        clientID: '{{ site.gitalk.clientID }}',
-                        clientSecret: '{{ site.gitalk.clientSecret }}',
-                        repo: '{{ site.gitalk.repo }}',
-                        owner: '{{ site.gitalk.owner }}',
-                        admin: ['{{ site.gitalk.admin }}'],
-                        id: location.pathname,      // 页面的唯一标识
-                        distractionFreeMode: false  // 是否启用无干扰模式
+                        clientID: '{{ site.gitalk.clientID }}',       // GitHub OAuth App的客户端ID
+                        clientSecret: '{{ site.gitalk.clientSecret }}', // GitHub OAuth App的密钥
+                        repo: '{{ site.gitalk.repo }}',              // 存储评论的仓库
+                        owner: '{{ site.gitalk.owner }}',            // 仓库所有者
+                        admin: ['{{ site.gitalk.admin }}'],          // 仓库管理员
+                        id: location.pathname,                       // 页面唯一标识
+                        distractionFreeMode: false                   // 是否启用无干扰模式
                     })
-                    gitalk.render('gitalk-container')
+                    gitalk.render('gitalk-container')                // 渲染评论区
+                </script> -->
+                <div id="gitalk-container"></div>
+                <!-- <script src="/js/md5.min.js"></script> -->
+                <script type="text/javascript">
+                    var gitalk = new Gitalk({
+                        clientID: '{{ site.gitalk.clientID }}',       // GitHub OAuth App的客户端ID
+                        clientSecret: '{{ site.gitalk.clientSecret }}', // GitHub OAuth App的密钥
+                        repo: '{{ site.gitalk.repo }}',              // 存储评论的仓库
+                        owner: '{{ site.gitalk.owner }}',            // 仓库所有者
+                        admin: ['{{ site.gitalk.admin }}'],          // 仓库管理员
+                        id: location.pathname,
+                        title: '{{ page.title }}',           // 使用文章标题作为 Issue 标题
+                        body: '文章链接：' + location.href,    // 自定义 Issue 描述
+                        labels: ['Gitalk', '{{ page.tags | join: "', '" }}'], // 添加文章标签作为 Issue 标签
+                        language: 'zh-CN',                   // 设置语言为中文
+                        perPage: 10,
+                        distractionFreeMode: false
+                    });
+                    gitalk.render('gitalk-container');
                 </script>
                 {% endif %}
 
-                {% if site.netease_comment %}
-                <!-- 网易云跟帖 评论框 start -->
+                <!-- 网易云跟帖评论系统 -->
+                <!-- {% if site.netease_comment %}
                 <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-                <!-- 网易云跟帖 评论框 end -->
-                {% endif %}
+                {% endif %} -->
             </div>  
 
-    <!-- Side Catalog Container -->
+    <!-- 右侧目录导航 -->
         {% unless page.no-catalog %}
             <div class="
-                col-lg-2 col-lg-offset-0
-                visible-lg-block
-                sidebar-container
-                catalog-container">
+                col-lg-2 col-lg-offset-0     <!-- 大屏幕时的宽度和偏移 -->
+                visible-lg-block             <!-- 只在大屏幕显示 -->
+                sidebar-container            <!-- 侧边栏容器 -->
+                catalog-container">          <!-- 目录容器 -->
                 <div class="side-catalog">
                     <hr class="hidden-sm hidden-xs">
                     <h5>
-                        <a class="catalog-toggle" href="#">CATALOG</a>
+                        <a class="catalog-toggle" href="#">目录</a>
                     </h5>
                     <ul class="catalog-body"></ul>
                 </div>
             </div>
         {% endunless %}
 
-    <!-- Sidebar Container -->
+    <!-- 底部侧边栏 -->
             <div class="
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
                 sidebar-container">
 
-                <!-- Featured Tags -->
+                <!-- 底部标签云 -->
                 {% include featured-tags.html bottom=true %}
 
-                <!-- Friends Blog -->
+                <!-- 友情链接 -->
                 {% include friends.html %}
             </div>
         </div>
     </div>
 </article>
 
-<!-- add support for mathjax by voleking-->
+<!-- 数学公式支持 -->
 {% if page.mathjax %}
   {% include mathjax_support.html %}
 {% endif %}
 
+<!-- 网易云跟帖JS代码 -->
 {% if site.netease_comment %}
-<!-- 网易云跟帖JS代码 start -->
 <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
 <script>
   var cloudTieConfig = {
-    url: document.location.href, 
-    sourceId: "",
-    productKey: "de25fc98a6fe48b3bc8a7ae765da99a0",
-    target: "cloud-tie-wrapper"
+    url: document.location.href,           // 当前页面地址
+    sourceId: "",                          // 源ID
+    productKey: "de25fc98a6fe48b3bc8a7ae765da99a0",  // 产品密钥
+    target: "cloud-tie-wrapper"            // 评论容器ID
   };
   var yunManualLoad = true;
   Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
 </script>
-<!-- 网易云跟帖JS代码 end -->
 {% endif %}
 
-
+<!-- Disqus评论系统 -->
 {% if site.disqus_username %}
-<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = "{{site.disqus_username}}";
-    var disqus_identifier = "{{page.id}}";
-    var disqus_url = "{{site.url}}{{page.url}}";
+    /* Disqus配置变量 */
+    var disqus_shortname = "{{site.disqus_username}}";  // Disqus短名称
+    var disqus_identifier = "{{page.id}}";              // 文章标识符
+    var disqus_url = "{{site.url}}{{page.url}}";       // 文章URL
 
+    // 加载Disqus评论框
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
-<!-- disqus 公共JS代码 end -->
 {% endif %}
 
 
+<!-- 锚点链接功能 -->
 {% if site.anchorjs %}
-<!-- async load function -->
+<!-- 异步加载函数 -->
 <script>
     function async(u, c) {
       var d = document, t = 'script',
@@ -156,19 +182,23 @@ layout: default
       s.parentNode.insertBefore(o, s);
     }
 </script>
-<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+
+<!-- 添加锚点链接 -->
 <script>
     async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
         anchors.options = {
-          visible: 'hover',
-          placement: 'right',
-          // icon: '#'
+          visible: 'hover',         // 鼠标悬停时显示
+          placement: 'right',       // 显示在右侧
+          // icon: '#'             // 锚点图标
         };
+        // 添加锚点并移除特定元素的锚点
         anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
     })
 </script>
+
+<!-- 锚点链接样式 -->
 <style>
-    /* place left on bigger screen */
+    /* 在大屏幕上将锚点放在左侧 */
     @media all and (min-width: 800px) {
         .anchorjs-link{
             position: absolute;
@@ -179,3 +209,26 @@ layout: default
     }
 </style>
 {% endif %}
+
+<!-- 代码块特殊字符处理 -->
+<script>
+  // 页面加载完成后执行
+  document.addEventListener('DOMContentLoaded', function() {
+    // 找到所有代码块
+    document.querySelectorAll('pre code').forEach(function(block) {
+      // 替换React组件标签，避免被解析为HTML
+      block.innerHTML = block.innerHTML
+        .replace(/&lt;Route/g, '<Route')
+        .replace(/&lt;Switch/g, '<Switch')
+        .replace(/Route&gt;/g, 'Route>')
+        .replace(/Switch&gt;/g, 'Switch>');
+        
+      // 替换双大括号，避免被Liquid模板引擎解析
+      {% raw %}
+      block.innerHTML = block.innerHTML
+        .replace(/\{\{/g, '{{')
+        .replace(/\}\}/g, '}}');
+      {% endraw %}
+    });
+  });
+</script>
