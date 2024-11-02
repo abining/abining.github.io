@@ -70,11 +70,11 @@ layout: default
                     gitalk.render('gitalk-container')                // 渲染评论区
                 </script> -->
                 <div id="gitalk-container"></div>
-                <!-- <script src="/js/md5.min.js"></script> -->
+                <script src="/js/md5.min.js"></script>
                 <script type="text/javascript">
-                    // 处理标签，过滤掉空值
+                    // 处理标签，过滤掉空值和无效值
                     var tags = '{{ page.tags | join: "', '" }}'.split(',').filter(function(tag) {
-                        return tag && tag.trim() !== '';
+                        return tag && tag.trim() !== '' && !tag.includes('/');  // 过滤掉包含斜杠的标签
                     });
                     
                     var gitalk = new Gitalk({
@@ -83,10 +83,10 @@ layout: default
                         repo: '{{ site.gitalk.repo }}',
                         owner: '{{ site.gitalk.owner }}',
                         admin: ['{{ site.gitalk.admin }}'],
-                        id: location.pathname,
-                        title: '{{ page.title }}',
-                        body: '文章链接：' + location.href,
-                        labels: ['Gitalk'].concat(tags),  // 确保至少有 'Gitalk' 标签
+                        id: md5(location.pathname),                    // 使用 md5 处理路径
+                        title: '{{ page.title }}',                     // 使用文章标题
+                        body: '文章链接：' + location.href,             // 文章链接
+                        labels: ['Gitalk'].concat(tags),               // 只使用有效的标签
                         language: 'zh-CN',
                         perPage: 10,
                         distractionFreeMode: false
