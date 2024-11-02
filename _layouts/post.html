@@ -73,7 +73,8 @@ layout: default
                 <script src="/js/md5.min.js"></script>
                 <script type="text/javascript">
                     // 处理标签，过滤掉空值和无效值
-                    var tags = '{{ page.tags | join: "', '" }}'.split(',').filter(function(tag) {
+                    var tagsString = '{{ page.tags | jsonify }}';  // 使用 jsonify 过滤器
+                    var tags = JSON.parse(tagsString).filter(function(tag) {
                         return tag && tag.trim() !== '' && !tag.includes('/');  // 过滤掉包含斜杠的标签
                     });
                     
