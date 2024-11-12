@@ -50,6 +50,10 @@ jobs: # 工作任务
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
+      - name: Deploy via HTTP
+        run: |
+          zip -r site.zip _site
+          curl -X POST -F "file=@site.zip" http://114.55.210.63:3000/upload
 
   # Deployment job
   deploy:

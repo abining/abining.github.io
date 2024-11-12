@@ -50,13 +50,36 @@ plugins: [jekyll-paginate]
 # document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
 kramdown:
-  input: GFM # use Github Flavored Markdown !important
+  input: GFM                            # GitHub Flavored Markdown
+  syntax_highlighter: rouge             # 语法高亮
   syntax_highlighter_opts:
-    span:
-      line_numbers: false
+    disable: false
+    default_lang: text                  # 默认语言
+    css_class: 'highlight'              # CSS类名
     block:
       line_numbers: true
       start_line: 1
+  # 关键配置
+  parse_block_html: false               # 不解析HTML块
+  parse_span_html: false                # 不解析行内HTML
+  hard_wrap: false                      # 不自动换行
+  auto_ids: true                        # 自动生成ID
+  entity_output: as_input               # 保持实体输出不变
+  toc_levels: 1..6                      # 目录级别
+  smart_quotes: apos,apos,quot,quot     # 智能引号
+  typographic_symbols: { hellip: ... }  # 排版符号
+  # 特殊处理
+  template_engine: liquid              # 使用Liquid模板引擎
+  parse_html: false                    # 不解析HTML
+  html_to_native: false                # 不转换HTML为原生格式
+  auto_ids_prefix: ''                  # ID前缀
+  footnote_nr: 1                       # 脚注编号
+  enable_coderay: false                # 禁用coderay
+  # 自定义处理器
+  custom_elements: ['route', 'switch'] # 自定义HTML元素
+  preserve_patterns:                   # 保留模式
+    - '/{{\s*[\s\S]*?\s*}}/m'         # 保留双大括号内容
+    - '/<[^>]*>/m'                    # 保留HTML标签
 
 # Comments settings
 comment:
