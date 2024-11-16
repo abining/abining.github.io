@@ -5,11 +5,10 @@ subtitle: "从零开始的Linux探索历程"
 author: "Ebin"
 header-img: "img/post-bg-unix-linux.jpg"
 header-mask: 0.4
+# layout:     keynote
+# iframe:     "http://huangxuan.me/js-module-7day/"
 catalog: true
-tags:
-    - Linux
-    - 技术
-    - 学习笔记
+tags: [Linux ,技术 ,笔记]
 ---
 
 > "Linux 是一个免费的类 Unix 操作系统，它代表着开源精神和技术自由。" —— [Linus Torvalds](https://github.com/torvalds)
