@@ -123,23 +123,12 @@ page-mathjax: false
 # Friends
 friends:
   [
-    { title: "乱序（Midare）", href: "http://mida.re/" },
-    { title: "Ebn Zhang", href: "https://ebnbin.dev/" },
-    { title: "Kun Qian", href: "http://kunq.me" },
-    { title: "Sherry Woo", href: "https://sherrywoo.me/" },
-    { title: "SmdCn", href: "http://blog.smdcn.net" },
-    { title: "JiyinYiyong", href: "http://tiye.me/" },
-    { title: "DHong Say", href: "http://dhong.co" },
-    { title: "尹峰以为", href: "http://ingf.github.io/" },
+    { title: "person", href: "http://114.55.210.63/" },
+    # { title: "Ebn Zhang", href: "https://ebnbin.dev/" },
+    # { title: "Kun Qian", href: "http://kunq.me" },
+    # { title: "Sherry Woo", href: "https://sherrywoo.me/" },
+    # { title: "SmdCn", href: "http://blog.smdcn.net" },
+    # { title: "JiyinYiyong", href: "http://tiye.me/" },
+    # { title: "DHong Say", href: "http://dhong.co" },
+    # { title: "尹峰以为", href: "http://ingf.github.io/" },
   ]
-  # 默认配置(这是追加的，会覆盖之前的配置)
-defaults: 
-  - scope:
-      path: ""      # 空字符串表示所有文件
-      type: "posts" # 只应用于 posts
-    values:
-      layout: "post"
-      author: "chouvel"
-      header-style: "text"  # 文章头部样式，可以是 text 或 image
-      # hidden: true # 是否在列表中隐藏这篇文章
-      catalog: true # 是否启用文章目录

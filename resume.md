@@ -1,6 +1,6 @@
 ---
 layout: resume
-title: "resume"
+title: "about"
 description: "Web前端开发工程师"
 header-img: "img/post-bg-resume.jpg"
 ---

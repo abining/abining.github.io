@@ -19,6 +19,45 @@
         background: rgba(0,0,0, {{ page.header-mask }});
     }
     {% endif %}
+
+    {% if page.header-color %}
+    header.intro-header .post-heading {
+        color: {{ page.header-color }};
+    }
+    .tags a, .tags .tag{
+        color: {{ page.header-color }};
+        border-color: {{ page.header-color }};
+        transition: all 0.3s ease;
+    }
+    .navbar-custom .navbar-brand{
+        color: {{ page.header-color }};
+        transition: all 0.3s ease;
+    }
+    .navbar-custom .nav li a {
+        color: {{ page.header-color }};
+        transition: 
+            color 0.3s ease,
+            font-weight 0.2s ease,
+            transform 0.3s ease;
+    }
+    .navbar-custom .nav li a:hover {
+        color: {{ page.header-color }};
+        font-weight: 800;
+        transform: scale(1.05);
+    }
+    .tags a:hover, .tags .tag:hover {
+        color: {{ page.header-color }};
+        font-weight: 800;
+        transform: scale(1.05);
+        background-color: {{ page.header-color }};
+        color: #fff;
+    }
+    .navbar-custom .navbar-brand:hover {
+        color: {{ page.header-color }};
+        font-weight: 800;
+        transform: scale(1.05);
+    }
+    {% endif %}
 </style>
 {% endif %}
 

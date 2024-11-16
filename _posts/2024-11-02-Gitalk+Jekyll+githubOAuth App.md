@@ -4,6 +4,8 @@ title: "gitalk作为评论工具，在Jekyll个人网站上使用"
 subtitle: "Gitalk+Jekyll+githubOAuth App"
 author: "Ebin"
 header-img: "img/post-bg-gitalk.png"
+header-color: "black"
+
 catalog: true
 tags:
     - Jekyll

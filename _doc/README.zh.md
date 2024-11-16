@@ -1,4 +1,4 @@
-# Hux blog 模板
+# Ebin blog 模板
 
 ### [我的博客在这里 &rarr;](http://abining.github.io)
 
@@ -79,13 +79,13 @@ $ git clone git@github.com:Huxpro/huxblog-boilerplate.git
 
 ```
 # Site settings
-title: Hux Blog             # 你的博客网站标题
-SEOTitle: Hux Blog			# 在后面会详细谈到
+title: Ebin Blog             # 你的博客网站标题
+SEOTitle: Ebin Blog			# 在后面会详细谈到
 description: "Cool Blog"    # 随便说点，描述一下
 
 # SNS settings      
-github_username: huxpro     # 你的github账号
-weibo_username: huxpro      # 你的微博账号，底部链接会自动更新的。
+github_username: abining     # 你的github账号
+weibo_username: abining      # 你的微博账号，底部链接会自动更新的。
 
 # Build settings
 # paginate: 10              # 一页你准备放几篇文章
@@ -104,11 +104,12 @@ yaml 头文件长这样:
 layout:     post
 title:      "Hello 2015"
 subtitle:   "Hello World, Hello Blog"
-date:       2015-01-29 12:00:00
-author:     "Hux"
+date:       2023-01-29 12:00:00
+author:     "Ebin"
 header-img: "img/post-bg-2015.jpg"
 tags:
     - Life
+	- Right
 ---
 
 ```
@@ -256,6 +257,8 @@ JavaScript 的压缩混淆、Less 的编译、Apache 2.0 许可通告的添加�
 其实这个SEO Title就是定义了<head><title>标题</title></head>这个里面的东西和多说分享的标题，你可以自行修改的。
 
 ## 致谢
+
+> Ebin的博客，fork自[Hux Blog](https://github.com/Huxpro/huxpro.github.io)
 
 1. 这个模板是从这里[IronSummitMedia/startbootstrap-clean-blog-jekyll](https://github.com/IronSummitMedia/startbootstrap-clean-blog-jekyll)  fork 的。 感谢这个作者
 2. 感谢[@BrucZhaoR](https://github.com/BruceZhaoR)的中文翻译 
