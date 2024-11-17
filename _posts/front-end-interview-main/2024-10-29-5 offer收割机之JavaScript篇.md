@@ -11,7 +11,7 @@ tags:
     - 面试
 ---
 
-![JavaScript面试题.png](https://cdn.nlark.com/yuque/0/2021/png/1500604/1621500410361-1f8976b5-7b26-4803-b5c3-d0ec8cd819d8.png?x-oss-process=image%2Fresize%2Cw_1038)
+![JavaScript面试题.png](https://s2.loli.net/2024/11/17/L47IoTpcJNrqHiR.png)
 
 ## 一、数据类型
 
@@ -269,8 +269,7 @@ console.log(n1 + n2)  // 0.30000000000000004
 
 下面看一下**双精度数是如何保存**的：
 
-![image](https://cdn.nlark.com/yuque/0/2020/png/1500604/1603641384908-7958dffa-6d26-4e36-963e-b41c9e3ca8b0.png)
-
+![image](https://s2.loli.net/2024/11/17/l5npYh21wPOCxLB.png)
 - 第一部分（蓝色）：用来存储符号位（sign），用来区分正负数，0表示正数，占用1位
 - 第二部分（绿色）：用来存储指数（exponent），占用11位
 - 第三部分（红色）：用来存储小数（fraction），占用52位
@@ -303,7 +302,7 @@ IEEE标准规定了一个偏移量，对于指数部分，每次都加这个偏�
 
 
 
-- 当指数位不全是0也不全是1时(规格化的数值)，IEEE规定，阶码计算公式为 e-Bias。 此时e最小值是1，则1-1023= -1022，e最大值是2046，则2046-1023=1023，可以看到，这种情况下取值范围是`-1022~1013`。
+- 当指数位不全是0也不全是1时(规格化的数值)，IEEE规定，阶码计算公式为 e-Bias。 此时e最小值是1，则1-1023= -1022，e最大值是2046，则2046-1023=1023，可以看到，这种情况下取值范围是`-1022~1023`。
 - 当指数位全部是0的时候(非规格化的数值)，IEEE规定，阶码的计算公式为1-Bias，即1-1023= -1022。
 - 当指数位全部是1的时候(特殊值)，IEEE规定这个浮点数可用来表示3个特殊值，分别是正无穷，负无穷，NaN。 具体的，小数位不为0的时候表示NaN；小数位为0时，当符号位s=0时表示正无穷，s=1时候表示负无穷。
 
@@ -1203,7 +1202,7 @@ console.log(repeated) // repeat for 3 times;repeat for 3 times;repeat for 3 time
 
 具体实现：
 
-```
+```javascript
 function objectFactory() {
   let newObject = null;
   let constructor = Array.prototype.shift.call(arguments);
@@ -1391,7 +1390,7 @@ js 中的内置对象主要指的是在程序执行前存在全局作用域里�
 
 ### 5. 常用的正则表达式有哪些？
 
-```
+```javascript
 // （1）匹配 16 进制颜色值
 var regex = /#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})/g;
 
@@ -1437,11 +1436,11 @@ JSON 字符串，然后将它传递到后端，后端通过 JSON 格式的字符
 
 一般有以下几种方式：
 
-- **defer 属性：**给 js 脚本添加 defer 属性，这个属性会让脚本的加载与文档的解析同步解析，然后在文档解析完成后再执行这个脚本文件，这样的话就能使页面的渲染不被阻塞。多个设置了 defer 属性的脚本按规范来说最后是顺序执行的，但是在一些浏览器中可能不是这样。
-- **async 属性：**给 js 脚本添加 async 属性，这个属性会使脚本异步加载，不会阻塞页面的解析过程，但是当脚本加载完成后立即执行 js 脚本，这个时候如果文档没有解析完成的话同样会阻塞。多个 async 属性的脚本的执行顺序是不可预测的，一般不会按照代码的顺序依次执行。
-- **动态创建 DOM 方式：**动态创建 DOM 标签的方式，可以对文档的加载事件进行监听，当文档加载完成后再动态的创建 script 标签来引入 js 脚本。
-- **使用 setTimeout 延迟方法：**设置一个定时器来延迟加载js脚本文件
-- **让 JS 最后加载：**将 js 脚本放在文档的底部，来使 js 脚本尽可能的在最后来加载执行。
+- **defer 属性：** 给 js 脚本添加 defer 属性，这个属性会让脚本的加载与文档的解析同步解析，然后在文档解析完成后再执行这个脚本文件，这样的话就能使页面的渲染不被阻塞。多个设置了 defer 属性的脚本按规范来说最后是顺序执行的，但是在一些浏览器中可能不是这样。
+- **async 属性：** 给 js 脚本添加 async 属性，这个属性会使脚本异步加载，不会阻塞页面的解析过程，但是当脚本加载完成后立即执行 js 脚本，这个时候如果文档没有解析完成的话同样会阻塞。多个 async 属性的脚本的执行顺序是不可预测的，一般不会按照代码的顺序依次执行。
+- **动态创建 DOM 方式：** 动态创建 DOM 标签的方式，可以对文档的加载事件进行监听，当文档加载完成后再动态的创建 script 标签来引入 js 脚本。
+- **使用 setTimeout 延迟方法：** 设置一个定时器来延迟加载js脚本文件
+- **让 JS 最后加载：** 将 js 脚本放在文档的底部，来使 js 脚本尽可能的在最后来加载执行。
 
 ### 8. JavaScript 类数组对象的定义？
 
@@ -1453,25 +1452,25 @@ JSON 字符串，然后将它传递到后端，后端通过 JSON 格式的字符
 
 （1）通过 call 调用数组的 slice 方法来实现转换
 
-```
+```javascript
 Array.prototype.slice.call(arrayLike);
 ```
 
 （2）通过 call 调用数组的 splice 方法来实现转换
 
-```
+```javascript
 Array.prototype.splice.call(arrayLike, 0);
 ```
 
 （3）通过 apply 调用数组的 concat 方法来实现转换
 
-```
+```javascript
 Array.prototype.concat.apply([], arrayLike);
 ```
 
 （4）通过 Array.from 方法来实现转换
 
-```
+```javascript
 Array.from(arrayLike);
 ```
 
@@ -1525,7 +1524,7 @@ Array.from(arrayLike);
 
 来看一下具体的`Unicode`编号范围与对应的`UTF-8`二进制格式 ：
 
-| 编码范围（编号对应的十进制数）  | 二进制格式                          |
+| 编码范围（编号对应的十进制数）  | 二进制格式                              |
 | ------------------------------- | ----------------------------------- |
 | 0x00—0x7F （0-127）             | 0xxxxxxx                            |
 | 0x80—0x7FF （128-2047）         | 110xxxxx 10xxxxxx                   |
@@ -1822,7 +1821,7 @@ Array.from(arrayLike);
 
 （1）将数组的方法应用到类数组上，这时候就可以使用`call`和`apply`方法，如：
 
-```
+```javascript
 function foo(){ 
   Array.prototype.forEach.call(arguments, a => console.log(a))
 }
@@ -1830,7 +1829,7 @@ function foo(){
 
 （2）使用Array.from方法将类数组转化成数组：‌
 
-```
+```javascript
 function foo(){ 
   const arrArgs = Array.from(arguments) 
   arrArgs.forEach(a => console.log(a))
@@ -1839,7 +1838,7 @@ function foo(){
 
 （3）使用展开运算符将类数组转化成数组
 
-```
+```javascript
 function foo(){ 
     const arrArgs = [...arguments] 
     arrArgs.forEach(a => console.log(a)) 
@@ -1861,25 +1860,25 @@ function foo(){
 
 - 通过 call 调用数组的 slice 方法来实现转换
 
-```
+```javascript
 Array.prototype.slice.call(arrayLike);
 ```
 
 - 通过 call 调用数组的 splice 方法来实现转换
 
-```
+```javascript
 Array.prototype.splice.call(arrayLike, 0);
 ```
 
 - 通过 apply 调用数组的 concat 方法来实现转换
 
-```
+```javascript
 Array.prototype.concat.apply([], arrayLike);
 ```
 
 - 通过 Array.from 方法来实现转换
 
-```
+```javascript
 Array.from(arrayLike);
 ```
 
@@ -2272,7 +2271,7 @@ for…of是作为ES6新增的遍历方式，允许遍历一个含有iterator接�
 
 如果需要遍历的对象是类数组对象，用Array.from转成数组即可。
 
-```
+```javascript
 var obj = {
     0:'one',
     1:'two',
@@ -2286,7 +2285,7 @@ for(var k of obj){
 
 如果不是类数组对象，就给对象添加一个[Symbol.iterator]属性，并指向一个迭代器即可。
 
-```
+```javascript
 //方法一：
 var obj = {
     a:1,
@@ -2346,7 +2345,7 @@ Ajax 即“AsynchronousJavascriptAndXML”（异步 JavaScript 和 XML），是�
 
 **（2）Fetch**
 
-fetch号称是AJAX的替代品，是在ES6出现的，使用了ES6中的promise对象。Fetch是基于promise设计的。Fetch的代码结构比起ajax简单多。**fetch不是ajax的进一步封装，而是原生js，没有使用XMLHttpRequest对象**。
+fetch号称是AJAX的替代品，是在ES6出现的，使用了ES6中的promise对象。Fetch是基于promise设计的。Fetch的代码结构比起ajax简单多。**fetch不是ajax的进一步封装，而是原生js，没有使用XMLHttpRequest对象**。是原生js的api。
 
 
 
@@ -2716,7 +2715,7 @@ this 是执行上下文中的一个属性，它指向最后一次调用这个方
 - 删除刚才新增的属性。
 - 返回结果。
 
-```
+```javascript
 Function.prototype.myCall = function(context) {
   // 判断调用对象
   if (typeof this !== "function") {
@@ -2747,7 +2746,7 @@ Function.prototype.myCall = function(context) {
 - 删除刚才新增的属性
 - 返回结果
 
-```
+```javascript
 Function.prototype.myApply = function(context) {
   // 判断调用对象是否为函数
   if (typeof this !== "function") {
@@ -2777,7 +2776,7 @@ Function.prototype.myApply = function(context) {
 - 创建一个函数返回
 - 函数内部使用 apply 来绑定函数调用，需要判断函数作为构造函数的情况，这个时候需要传入当前函数的 this 给 apply 调用，其余情况都传入指定的上下文对象。
 
-```
+```javascript
 Function.prototype.myBind = function(context) {
   // 判断调用对象是否为函数
   if (typeof this !== "function") {
@@ -2877,8 +2876,7 @@ async function func1() {
 console.log(func1())
 ```
 
-![img](https://cdn.nlark.com/yuque/0/2020/png/1500604/1604021075237-8249a8df-3a28-4bca-9f22-02923aba8618.png?x-oss-process=image%2Fresize%2Cw_1038)
-
+![img](https://s2.loli.net/2024/11/18/dwOhWjcZS1DTUV3.png)
 func1的运行结果其实就是一个Promise对象。因此也可以使用then来处理后续逻辑。
 
 ```javascript
@@ -2959,7 +2957,7 @@ Promise对象代表一个异步操作，有三种状态：pending（进行中）
 
 Promise构造函数接受一个函数作为参数，该函数的两个参数分别是`resolve`和`reject`。
 
-```
+```javascript
 const promise = new Promise(function(resolve, reject) {
   // ... some code
   if (/* 异步操作成功 */){
@@ -2970,13 +2968,13 @@ const promise = new Promise(function(resolve, reject) {
 });
 ```
 
-**一般情况下都会使用**`**new Promise()**`**来创建promise对象，但是也可以使用**`**promise.resolve**`**和** `**promise.reject**`**这两个方法：**
+**一般情况下都会使用 **`new Promise()`** 来创建promise对象，但是也可以使用 **`promise.resolve`** 和 **`promise.reject`** 这两个方法：**
 
 - **Promise.resolve**
 
 `Promise.resolve(value)`的返回值也是一个promise对象，可以对返回值进行.then调用，代码如下：
 
-```
+```javascript
 Promise.resolve(11).then(function(value){
   console.log(value); // 打印出11
 });
@@ -2988,17 +2986,17 @@ Promise.resolve(11).then(function(value){
 
 创建promise对象可以使用`new Promise`的形式创建对象，也可以使用`Promise.resolve(value)`的形式创建promise对象；
 
-- **Promise.reject**
+- **Promise.reject** 
 
 `Promise.reject` 也是`new Promise`的快捷形式，也创建一个promise对象。代码如下：
 
-```
+```javascript
 Promise.reject(new Error(“我错了，请原谅俺！！”));
 ```
 
 就是下面的代码new Promise的简单形式：
 
-```
+```javascript
 new Promise(function(resolve,reject){
    reject(new Error("我错了，请原谅俺！！"));
 });
@@ -3006,7 +3004,7 @@ new Promise(function(resolve,reject){
 
 下面是使用resolve方法和reject方法：
 
-```
+```javascript
 function testPromise(ready) {
   return new Promise(function(resolve,reject){
     if(ready) {
@@ -3034,7 +3032,7 @@ Promise有五个常用的方法：then()、catch()、all()、race()、finally。
 
 当Promise执行的内容符合成功条件时，调用`resolve`函数，失败就调用`reject`函数。Promise创建完了，那该如何调用呢？
 
-```
+```javascript
 promise.then(function(value) {
   // success
 }, function(error) {
@@ -3050,7 +3048,7 @@ promise.then(function(value) {
 
 当要写有顺序的异步事件时，需要串行时，可以这样写：
 
-```
+```javascript
 let promise = new Promise((resolve,reject)=>{
     ajax('first').success(function(res){
         resolve(res);
@@ -3079,7 +3077,7 @@ promise.then(res=>{
 
 Promise对象除了有then方法，还有一个catch方法，该方法相当于`then`方法的第二个参数，指向`reject`的回调函数。不过`catch`方法还有一个作用，就是在执行`resolve`回调函数时，如果出现错误，抛出异常，不会停止运行，而是进入`catch`方法中。
 
-```
+```javascript
 p.then((data) => {
      console.log('resolved',data);
 },(err) => {
@@ -3097,7 +3095,7 @@ p.then((data) => {
 
 `all`方法可以完成并行任务， 它接收一个数组，数组的每一项都是一个`promise`对象。当数组中所有的`promise`的状态都达到`resolved`的时候，`all`方法的状态就会变成`resolved`，如果有一个状态变成了`rejected`，那么`all`方法的状态就会变成`rejected`。
 
-```
+```javascript
 javascript
 let promise1 = new Promise((resolve,reject)=>{
     setTimeout(()=>{
@@ -3126,7 +3124,7 @@ Promise.all([promise1,promise2,promise3]).then(res=>{
 
 `race`方法和`all`一样，接受的参数是一个每项都是`promise`的数组，但是与`all`不同的是，当最先执行完的事件执行完之后，就直接返回该`promise`对象的值。如果第一个`promise`对象状态变成`resolved`，那自身的状态变成了`resolved`；反之第一个`promise`变成`rejected`，那自身状态就会变成`rejected`。
 
-```
+```javascript
 let promise1 = new Promise((resolve,reject)=>{
     setTimeout(()=>{
        reject(1);
@@ -3152,7 +3150,7 @@ Promise.race([promise1,promise2,promise3]).then(res=>{
 
 那么`race`方法有什么实际作用呢？当要做一件事，超过多长时间就不做了，可以用这个方法来解决：
 
-```
+```javascript
 Promise.race([promise1,timeOutPromise(5000)]).then(res=>{})
 ```
 
@@ -3160,7 +3158,7 @@ Promise.race([promise1,timeOutPromise(5000)]).then(res=>{})
 
 `finally`方法用于指定不管 Promise 对象最后状态如何，都会执行的操作。该方法是 ES2018 引入标准的。
 
-```
+```javascript
 promise
 .then(result => {···})
 .catch(error => {···})
@@ -3173,7 +3171,7 @@ promise
 
 下面是一个例子，服务器使用 Promise 处理请求，然后使用`finally`方法关掉服务器。
 
-```
+```javascript
 server.listen(port)
   .then(function () {
     // ...
@@ -3183,7 +3181,7 @@ server.listen(port)
 
 `finally`方法的回调函数不接受任何参数，这意味着没有办法知道，前面的 Promise 状态到底是`fulfilled`还是`rejected`。这表明，`finally`方法里面的操作，应该是与状态无关的，不依赖于 Promise 的执行结果。`finally`本质上是`then`方法的特例：
 
-```
+```javascript
 promise
 .finally(() => {
   // 语句
@@ -3208,7 +3206,7 @@ promise
 
 在工作中经常会碰到这样一个需求，比如我使用ajax发一个A请求后，成功后拿到数据，需要把数据传给B请求；那么需要如下编写代码：
 
-```
+```javascript
 let fs = require('fs')
 fs.readFile('./a.txt','utf8',function(err,data){
   fs.readFile(data,'utf8',function(err,data){
@@ -3228,7 +3226,7 @@ fs.readFile('./a.txt','utf8',function(err,data){
 
 `Promise`出现之后，代码变成这样：
 
-```
+```javascript
 let fs = require('fs')
 function read(url){
   return new Promise((resolve,reject)=>{
@@ -3251,7 +3249,7 @@ read('./a.txt').then(data=>{
 
 ### 6. Promise.all和Promise.race的区别的使用场景
 
-**（1）****Promise.all**
+**（1）** **Promise.all**
 
 `Promise.all`可以将多个`Promise`实例包装成一个新的Promise实例。同时，成功和失败的返回值是不同的，成功的时候返回的是**一个结果数组**，而失败的时候则返回**最先被reject失败状态的值**。
 
@@ -3267,7 +3265,7 @@ Promise.all中传入的是数组，返回的也是是数组，并且会将进行
 
 顾名思义，Promse.race就是赛跑的意思，意思就是说，Promise.race([p1, p2, p3])里面哪个结果获得的快，就返回那个结果，不管结果本身是成功状态还是失败状态。当要做一件事，超过多长时间就不做了，可以用这个方法来解决：
 
-```
+```javascript
 Promise.race([promise1,timeOutPromise(5000)]).then(res=>{})
 ```
 
@@ -3275,7 +3273,7 @@ Promise.race([promise1,timeOutPromise(5000)]).then(res=>{})
 
 async/await其实是`Generator` 的语法糖，它能实现的效果都能用then链来实现，它是为优化then链而开发出来的。从字面上来看，async是“异步”的简写，await则为等待，所以很好理解async 用于申明一个 function 是异步的，而 await 用于等待一个异步方法执行完成。当然语法上强制规定await只能出现在asnyc函数中，先来看看async函数返回了什么： 
 
-```
+```javascript
 async function testAsy(){
    return 'hello world';
 }
@@ -3283,15 +3281,14 @@ let result = testAsy();
 console.log(result)
 ```
 
-![img](https://cdn.nlark.com/yuque/0/2020/png/1500604/1605099411873-d2eac25a-5d8c-4586-bc36-769bce79010e.png)
-
+![img](https://s2.loli.net/2024/11/18/sJfFxKvmkbpG1EQ.png)
 所以，async 函数返回的是一个 Promise 对象。async 函数（包含函数语句、函数表达式、Lambda表达式）会返回一个 Promise 对象，如果在函数中 `return` 一个直接量，async 会把这个直接量通过 `Promise.resolve()` 封装成 Promise 对象。
 
 
 
 async 函数返回的是一个 Promise 对象，所以在最外层不能用 await 获取其返回值的情况下，当然应该用原来的方式：`then()` 链来处理这个 Promise 对象，就像这样：
 
-```
+```javascript
 async function testAsy(){
    return 'hello world'
 }
@@ -3320,7 +3317,7 @@ result.then(v=>{
 
 因为 async 函数返回一个 Promise 对象，所以 await 可以用于等待一个 async 函数的返回值——这也可以说是 await 在等 async 函数，但要清楚，它等的实际是一个返回值。注意到 await 不仅仅用于等 Promise 对象，它可以等任意表达式的结果，所以，await 后面实际是可以接普通函数调用或者直接量的。所以下面这个示例完全可以正确运行：
 
-```
+```javascript
 function getSomething() {
     return "something";
 }
@@ -3344,7 +3341,7 @@ await 表达式的运算结果取决于它等的是什么。
 
 来看一个例子：
 
-```
+```javascript
 function testAsy(x){
    return new Promise(resolve=>{setTimeout(() => {
        resolve(x);
@@ -3371,7 +3368,7 @@ console.log('cug')  //立即输出cug
 
 假设一个业务，分多个步骤完成，每个步骤都是异步的，而且依赖于上一个步骤的结果。仍然用 `setTimeout` 来模拟异步操作：
 
-```
+```javascript
 /**
  * 传入参数 n，表示这个函数执行的时间（毫秒）
  * 执行的结果是 n + 200，这个值将用于下一步骤
@@ -3397,7 +3394,7 @@ function step3(n) {
 
 现在用 Promise 方式来实现这三个步骤的处理：
 
-```
+```javascript
 function doIt() {
     console.time("doIt");
     const time1 = 300;
@@ -3420,7 +3417,7 @@ doIt();
 
 如果用 async/await 来实现呢，会是这样：
 
-```
+```javascript
 async function doIt() {
     console.time("doIt");
     const time1 = 300;
@@ -3444,7 +3441,7 @@ doIt();
 
 ### 11. async/await 如何捕获异常
 
-```
+```javascript
 async function fn(){
     try{
         let a = await Promise.reject('error')
@@ -3463,7 +3460,7 @@ async function fn(){
 
 以下代码就是一个回调函数的例子：
 
-```
+```javascript
 ajax(url, () => {
     // 处理逻辑
 })
@@ -3471,7 +3468,7 @@ ajax(url, () => {
 
 回调函数有一个致命的弱点，就是容易写出回调地狱（Callback hell）。假设多个请求存在依赖性，可能会有如下代码：
 
-```
+```javascript
 ajax(url, () => {
     // 处理逻辑
     ajax(url1, () => {
@@ -3485,7 +3482,7 @@ ajax(url, () => {
 
 以上代码看起来不利于阅读和维护，当然，也可以把函数分开来写：
 
-```
+```javascript
 function firstAjax() {
   ajax(url1, () => {
     // 处理逻辑
@@ -3520,7 +3517,7 @@ ajax(url, () => {
 
 其实这个观点是错误的，因为 JS 是单线程执行的，如果前面的代码影响了性能，就会导致 `setTimeout` 不会按期执行。当然了，可以通过代码去修正 `setTimeout`，从而使定时器相对准确：
 
-```
+```javascript
 let period = 60 * 1000 * 60 * 2
 let startTime = new Date().getTime()
 let count = 0
@@ -3553,7 +3550,7 @@ setTimeout(loop, currentInterval)
 
 通常来说不建议使用 `setInterval`。第一，它和 `setTimeout` 一样，不能保证在预期的时间执行任务。第二，它存在执行累积的问题，请看以下伪代码
 
-```
+```javascript
 function demo() {
   setInterval(function(){
     console.log(2)
@@ -3569,7 +3566,7 @@ demo()
 
 如果有循环定时器的需求，其实完全可以通过 `requestAnimationFrame` 来实现：
 
-```
+```javascript
 function setInterval(callback, interval) {
   let timer
   const now = Date.now
@@ -3678,7 +3675,7 @@ setInterval(timer => {
 - 另外一种垃圾回收机制就是引用计数，这个用的相对较少。引用计数就是跟踪记录每个值被引用的次数。当声明了一个变量并将一个引用类型赋值给该变量时，则这个值的引用次数就是1。相反，如果包含对这个值引用的变量又取得了另外一个值，则这个值的引用次数就减1。当这个引用次数变为0时，说明这个变量已经没有价值，因此，在在机回收期下次再运行时，这个变量所占有的内存空间就会被释放出来。
 - 这种方法会引起**循环引用**的问题：例如：` obj1`和`obj2`通过属性进行相互引用，两个对象的引用次数都是2。当使用循环计数时，由于函数执行完后，两个对象都离开作用域，函数执行结束，`obj1`和`obj2`还将会继续存在，因此它们的引用次数永远不会是0，就会引起循环引用。
 
-```
+```javascript
 function fun() {
     let obj1 = {};
     let obj2 = {};
@@ -3689,7 +3686,7 @@ function fun() {
 
 这种情况下，就要手动释放变量占用的内存：
 
-```
+```javascript
 obj1.a =  null
  obj2.a =  null
 ```
