@@ -1,6 +1,6 @@
 ---
 layout: post
-
+categories: [前端面试] # 文章分类，tags的替代
 author: "Chouvel"
 hidden: true
 header-img: "img/post-bg-default.jpg"
