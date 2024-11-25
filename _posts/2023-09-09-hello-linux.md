@@ -2,6 +2,7 @@
 layout: post
 title: "Hello Linux - 我的Linux学习之旅"
 subtitle: "从零开始的Linux探索历程"
+categories: [Linux] # 文章分类，tags的替代
 author: "Ebin"
 header-img: "img/post-bg-unix-linux.jpg"
 header-mask: 0.4
