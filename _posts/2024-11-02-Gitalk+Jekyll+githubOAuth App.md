@@ -61,14 +61,15 @@ tags:
                     repo: '评论存放的仓库名称',
                     owner: 'Github ID/username',
                     admin: ['同owner, 也可添加其他管理员'],
-                    id: md5(location.href.match('/(?<=posts/)(.*)(?=/)/')[1]),
-                    title: '{{ page.title }}',                     // 使用文章标题
-                    body: '文章链接：' + location.href,             // 文章链接
+                    id: md5(location.pathname),                    // 使用 md5 处理路径
+                    title: '{{ page.title }}',                     // 文章标题,这里是通过YAML front matter获取的
+                    body: '文章链接：' + location.href,             // 文章链接，这里是通过JavaScript的location这个API获取的
                     labels: ['Gitalk'].concat(tags),               // 只使用有效的标签
                     language: 'zh-CN',
                     perPage: 10,
                     distractionFreeMode: false // 是否启用无干扰模式
                 });
+                
                 gitalk.render('gitalk-container');
             </script>
         ```
@@ -202,10 +203,10 @@ tags:
 
 完成以上步骤后，当你的博客部署到GitHub Pages上时，每篇博文底部应该能看到Gitalk的评论框。如果有任何问题，检查控制台中是否有错误提示，这通常是由配置错误或文件路径问题引起的。
 博客评论区效果:
-![image.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/a95b79cf46794b49839eb41cd0b5f8f9~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5bel5Lya5Luj6KGo:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiNzQxNDk1MjkzMDkyMTUxIn0%3D&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1731150784&x-orig-sign=hEruVj2gJ5ffuGRiMPUllMyjpew%3D)
+![image.png](https://s2.loli.net/2024/11/25/wvaScCOtEq6PzgT.png)
 
 指定仓库的[issues](https://github.com/abining/blog-comments/issues)效果:
-![image.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/2a403fec07c440b9ba679615e81d9924~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5bel5Lya5Luj6KGo:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiNzQxNDk1MjkzMDkyMTUxIn0%3D&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1731150784&x-orig-sign=uhyuKOaIq00WGR6GkSUyrnMGyBc%3D)
+![image.png](https://s2.loli.net/2024/11/25/9UTmtHEieg6LnSp.png)
 
 ## Gitalk 与 GitHub Issues 的绑定机制探究
 
@@ -227,22 +228,22 @@ tags:
     repo: '{{ site.gitalk.repo }}',            // 仓库名
     owner: '{{ site.gitalk.owner }}',          // 仓库所有者
     admin: ['{{ site.gitalk.admin }}'],        // 可以初始化评论的人
-    id: location.pathname,                     // Issue 的标识符
+    id: location.pathname,                     // Issue 的标识符,因为页面url可能超过50个字符，所以可以采用上述的md5进行加密达到压缩字符的目的
 }
 ```
 
 ### 一个github的issue包含内容
 
-![image.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/ed12c5f263104f3daa62f519cbf6108f~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5bel5Lya5Luj6KGo:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiNzQxNDk1MjkzMDkyMTUxIn0%3D&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1731150784&x-orig-sign=SuUdpA2lpVC9a1gACaWUAJdyUPc%3D)
+![image.png](https://s2.loli.net/2024/11/25/s4bFSxQkKdrtM3Y.png)
 
 1.  Issue 的标题（Title），默认是网站的head内容，例如这里的红圈色部分的内容，在不指定的时候会作为Issue的title使用。
 
-![image.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/ecf57595fb564327a1d9f4396050f0f7~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5bel5Lya5Luj6KGo:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiNzQxNDk1MjkzMDkyMTUxIn0%3D&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1731150784&x-orig-sign=MP4W2bfLplHOi9quASeUv6lF7TY%3D)
+![image.png](https://s2.loli.net/2024/11/25/4skrESNLRxlJyjn.png)
 
 2.  Issue 的标签（Label）
-    可以自己指定，没有指定则会添加[Gitalk](https://github.com/abining/blog-comments/issues?q=is%3Aissue+is%3Aopen+label%3AGitalk)，id
+    可以自己指定，没有指定则会添加[`Gitalk`这个标签](https://github.com/abining/blog-comments/issues?q=is%3Aissue+is%3Aopen+label%3AGitalk)，以及之前指定的`id`这个标签
 
-3.  issue的description，未指定则会贴上当前评论的博客的网址。
+3.  issue的description，未指定则会贴上当前评论的博客的网址也就是：`location.href`。
 
 ### id的作用
 
@@ -251,8 +252,8 @@ tags:
 **工作流程：**
 
 1.  访问页面 -> Gitalk 初始化
-2.  使用 id 查找对应的 Issue
-3.  如果找不到，管理员可以点击初始化评论
+2.  使用 id 查找对应的 Issue，返回Issue的number，找到了就拿着id进行异步请求，获取Issue中的内容。
+3.  如果找不到，管理员可以点击初始化评论,
 4.  初始化时会创建一个新的 Issue：
     *   Title: 页面标题
     *   Label: 使用 id 值
