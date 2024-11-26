@@ -1,6 +1,6 @@
 ---
 layout: resume
-title: "about"
+title: "RESUME"
 description: "Web前端开发工程师"
 header-img: "img/post-bg-resume.jpg"
 ---
@@ -11,12 +11,15 @@ header-img: "img/post-bg-resume.jpg"
 
 ## 专业技能
 
-- 熟悉 HTML、CSS、JavaScript 等前端开发技术，了解 TypeScript
-- 熟悉使用 **React** 以及周边工具：Redux、React-Router、Ant Design 进行 Web 开发
-- 熟悉**弹性布局**，**响应式布局**，熟悉 JS **事件循环**，**原型，闭包**等，了解浏览器工作原理
-- 熟悉 **Vue** 框架生态，包括 Vue2、Vue3、Vuex、Pinia、Vue-router；以及组件库 Element UI、iView 等
-- 了解计算机网络相关知识，如 **TCP/IP、HTTP、HTTPS** 协议等
-- 了解并且掌握 Node.js 核心模块以及 Express 框架的使用
+- 熟悉HTML、CSS、JavaScript等前端开发技术，了解TypeScript。
+- 熟悉Vue框架生态，包括Vue2，Vue3，Uniapp，Vue-Router,Vuex，Pinia；以及组件库ElementUi，Iview等。
+- 熟悉**弹性布局**，**响应式布局**，熟悉**JS事件循环**，**原型，闭包等**，**Vue响应式原理**，了解浏览器工作原理。
+- 能够使用 **React** 以及周边工具：Redux、React-Router、Ant Design 进行 Web 开发
+- 了解计算机网络相关知识，如**TCP/IP、HTTP、HTTPS**协议等。
+- 了解并且掌握Node核心模块以及Express框架的使用。
+
+
+
 
 ## 实习经历
 
@@ -34,11 +37,21 @@ header-img: "img/post-bg-resume.jpg"
 
 ## 项目经历
 
+### **mobService-开发者后台项目**
+
+项目概述：面向公司客户（使用公司提供的sdk的开发者）的一套系统，用户量近30W。
+技术栈：Vue + Vue-Router + Vuex + Webpack + Less + Echart
+**负责内容**
+-   对**用户的权限Config**进行持久化存储，通过Config对象控制用户的表单展示，实现更细分的权限控制。
+-   参与**地理围栏推送**的需求开发，允许客户对可视化地理围栏进行绘制，编辑，删除等，实现指定区域的消息推送服务。
+-   利用**Echart**进行数据进行可视化，包括各类柱状图，折线图，饼图等等。
+-   实现**动态表单Form**，根据用户填写的内容动态生成后续的表单以及相关的校验。
+
 ### MobTech-SCS后台项目
 
 **项目概述**：面向公司运营人员使用的一套系统。用户可以在后台中管理客户各种信息，进行工单处理。
 
-**技术栈**：React + Redux
+**技术栈**：React + Redux + Ant Design + ECharts
 
 **负责内容**：
 - 升级 Ant Design 版本，实现业务功能的扩展
@@ -46,13 +59,12 @@ header-img: "img/post-bg-resume.jpg"
 - 参与资质审核需求的开发，用户可以在列表中快速查看对应的资质信息，并且推送给指定的平台
 - 利用 ECharts 进行数据可视化，包括各类柱状图、折线图、堆叠图等
 
-### Uniapp供应商移动端项目
+### **Uniapp供应商移动端项目**
 
-**项目概述**：供应商以及采购人员使用的移动端系统，主要功能是查看招标公告、订单管理等。
-
-**技术栈**：uView + Vue2 + Uniapp + Less
-
-**负责内容**：
-- 业务模块：实现注册、登录、获取采购信息、采购订单、采购合同、中标管理、投标管理等模块的开发
-- 对 uView 请求进行二次封装，并且作为插件注册到全局
-- 使用 Vuex，封装动态获取字典的 action，并且对特定的 state 进行持久化存储
+项目概述：供供应商以及采购人员使用的的的移动端系统，主要功能是查看招标公告，订单管理等。
+技术栈：Uniapp + uView + Scss + Vuex
+**负责内容**
+- 设计并实现多个业务模块，包括注册、登录、获取采购信息、采购订单、采购合同、中标管理和投标管理等。
+- 对 uView 请求进行二次封装，并作为插件注册到全局，以提升组件的复用性和维护性。
+- 使用Vuex，封装动态获取字典的action，并且对特定的state进行持久化存储。
+- 封装滚动分页组件，实现移动端的滚动分页功能，提升用户体验。
