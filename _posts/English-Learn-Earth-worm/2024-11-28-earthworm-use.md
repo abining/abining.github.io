@@ -14,7 +14,8 @@ tags:
     - earthworm
 ---
 
-![20241128012736](https://raw.githubusercontent.com/abining/picgo_imgs/main/images/20241128012736.png)
+<!-- ![20241128012736](https://raw.githubusercontent.com/abining/picgo_imgs/main/images/20241128012736.png) -->
+
 ## 英语
 
 ### 1128
