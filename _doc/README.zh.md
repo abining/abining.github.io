@@ -97,14 +97,15 @@ yaml 头文件长这样:
 ```
 ---
 layout:     post
-title:      "Hello 2015"
+title:      "Hello 2024"
 subtitle:   "Hello World, Hello Blog"
 date:       2023-01-29 12:00:00
-author:     "Ebin"
-header-img: "img/post-bg-2015.jpg"
+author:     "abining"
+header-style: text
+# header-img: "img/post-bg-2015.jpg"
 tags:
     - Life
-	- Right
+	 - Right
 ---
 
 ```

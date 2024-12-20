@@ -1,13 +1,12 @@
 ---
-layer: post
-catalog: true
-# hidden: true
-title: 一文搞懂offset系列、client系列、scroll系列，以及他们的应用场景
+layout:     post
+title:      "一文搞懂offset系列、client系列、scroll系列，以及他们的应用场景"
+author:     "abining"
 header-style: text
+# header-img: "img/post-bg-2015.jpg"
 tags: [前端开发,css,盒子模型]
-
-author: abining
 ---
+
 
 
 # 前言
