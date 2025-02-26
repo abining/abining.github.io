@@ -78,7 +78,7 @@ title: Ebin Blog             # 你的博客网站标题
 SEOTitle: Ebin Blog			# 在后面会详细谈到
 description: "Cool Blog"    # 随便说点，描述一下
 
-# SNS settings    
+# SNS settings  
 github_username: abining     # 你的github账号
 weibo_username: abining      # 你的微博账号，底部链接会自动更新的。
 
@@ -105,7 +105,7 @@ header-style: text
 # header-img: "img/post-bg-2015.jpg"
 tags:
     - Life
-	 - Right
+    - Right
 ---
 
 ```
@@ -247,7 +247,7 @@ JavaScript 的压缩混淆、Less 的编译、Apache 2.0 许可通告的添加�
 
 我的博客标题是 **“Hux Blog”** 但是我想要在搜索的时候显示 **“黄玄的博客 | Hux Blog”** ，这个就需要SEO Title来定义了。
 
-其实这个SEO Title就是定义了`<head><title>`标题`</title></head>`这个里面的东西和多说分享的标题，你可以自行修改的。
+其实这个SEO Title就是定义了 `<head><title>`标题 `</title></head>`这个里面的东西和多说分享的标题，你可以自行修改的。
 
 ## 致谢
 
