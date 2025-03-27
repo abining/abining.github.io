@@ -23,9 +23,11 @@ header-img: "img/post-bg-resume.jpg"
 
 技术研发部 | Web前端开发 · 2024·12-至今
 
-- 负责杭州低空经济产业发展有限公司的杭州市低空管服平台二期项目。
 - 杭州市低空管服平台驾驶舱的开发。
+- 使用echarts技术，开发图表。
+- 
 - 参与杭州市低空管理平台官网的从0开始的搭建。
+- 
 
 ### 上海游昆信息科技有限公司（MobTech）
 
@@ -145,11 +147,20 @@ https://versakit.github.io/Versakit/
 
 · 基于 IntersectionObserver 完成长列表组件与懒加载指令，可配合瀑布流完成复杂功能的业务逻辑
 
+- 配置vitePress组件文档的编写，为每个组件进行文档的编写。
+- 
+
 · 基于 Render 函数完成动态的 VNode 渲染，支持方法触发形式的组件动态插入，涉及到：message、confirm 组件
 
 · 基于自定义栈逻辑完成虚拟任务栈构建，配合 KeepAlive + Transform 可实现 APP 跳转逻辑的 H5 切换效果
 
-· 基于 Vitest 完善组件单元测试，测试覆盖率超 85%
+· 基于 Vitest 完善组件单元测试，测试覆盖率超 85%。
+
+参与组件库主题的初始化，并且完成组件十余个，搭建vitePress组件库文档，并且沉淀可复用的文档。
+
+开发流程的介绍：目前社区里面提出的pr的请求的数量不多，我们依然是和其他开源库的管理方式一样，采用认领的制度。
+
+对于每周开会讨论出来的内容，我们采取
 
 
 ### Versakit-markdown
@@ -164,11 +175,15 @@ https://versakit.github.io/Versakit-markdown/
 
 - 从 0 到 1 搭建 Monorepo 项目结构，使用 Pnpm 完成多包管理，并集成 Husky、ESLint、Prettier 等代码标准化工具
 - 对于编辑器，使用观察者模式，对用户的观察，进行配置，获取到编辑器实例后，emit给。
-- 利用栈的数据结构，使用两个栈，实现编辑器的undo和redo。
+- 使用
+- 利用栈的数据结构，使用两个栈，实现编辑器的undo和redo，采用
 - 具有丰富的节点定义，例如图片，表格，链接等等。
 - 对文本进行格式化处理，
-- 
 - 基于 Rollup 完成多格式发布包，配置 npm 自动化发包流程，并沉淀出可复用文档。
 - 基于 VitePress 搭建项目文档，配置 Github Actions 实现文档自动部署至 GitHub Pages。
 
 让内容可以编辑：contenteditable=true。
+
+对文本进行
+
+解决快速分页下的竞争问题。
