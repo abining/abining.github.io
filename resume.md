@@ -28,14 +28,14 @@ header-img: "img/post-bg-resume.jpg"
 
 ### 上海游昆信息科技有限公司（MobTech）
 
-**工程架构部 | Web前端开发** · 2024.07 - 2024.10
+工程架构部 | Web前端开发 · 2024.07 - 2024.10
 
 - 参与公司各类中后台的业务开发，技术栈包括 Vue、React以及配套的如：iView、antd、vuex、vue-router、axios等
 - 为近**30万**使用公司产品的开发者提供一个功能强大且用户友好的中后台管理系统。
 
 ### 杭州数赢科技有限公司
 
-**技术研发部 | Web前端开发** · 2023.12 - 2024.05
+技术研发部 | Web前端开发 · 2023.12 - 2024.05
 
 - 主导供应商移动端的技术架构设计，运用 Uniapp 框架实现微信端和H5端的开发
 - 构建后台管理系统的计价模块，实现用户录入计价模型，在计价模块中，利用**动态表单**动态渲染表单项
@@ -45,7 +45,7 @@ header-img: "img/post-bg-resume.jpg"
 
 ### Versakit-UI（开源组件库）
 
-https://versakit.github.io/Versakit/
+[https://versakit.github.io/Versakit/](https://versakit.github.io/Versakit/)
 
 技术栈：Vue + Typescript + Vite + Vitest + Sass + PostCSS
 
@@ -79,7 +79,7 @@ https://versakit.github.io/Versakit/
 
 ### Versakit-markdown
 
-https://versakit.github.io/Versakit-markdown/
+[https://versakit.github.io/Versakit-markdown/](https://versakit.github.io/Versakit-markdown/)
 
 技术栈：TypeScript + Rollup + Pnpm + Vue
 
