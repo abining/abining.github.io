@@ -1,46 +1,6 @@
 # Ebin blog 模板
 
-### [我的博客在这里 &rarr;](http://abining.github.io)
-
-### 关于收到"Page Build Warning"的email
-
-由于jekyll升级到3.0.x,对原来的pygments代码高亮不再支持，现只支持一种-rouge，所以你需要在 `_config.yml`文件中修改 `highlighter: rouge`.另外还需要在 `_config.yml`文件中加上 `gems: [jekyll-paginate]`.
-
-同时,你需要更新你的本地jekyll环境.
-
-使用 `jekyll server`的同学需要这样：
-
-1. `gem update jekyll` # 更新jekyll
-2. `gem update github-pages` #更新依赖的包
-
-使用 `bundle exec jekyll server`的同学在更新jekyll后，需要输入 `bundle update`来更新依赖的包.
-
-参考文档：[using jekyll with pages](https://help.github.com/articles/using-jekyll-with-pages/) & [Upgrading from 2.x to 3.x](http://jekyllrb.com/docs/upgrading/2-to-3/)
-
-## 关于模板(beta)
-
-我的博客仓库——`huxpro.github.io`，是经常修改的，而且还会有人乱提交代码，因此给大家做了一个稳定版的模板。大家可以直接fork模板——`huxblog-boilerplate`,要改的地方我都说明了。或者可以直接下载zip到本地自己去修改。
-
-```
-$ git clone git@github.com:Huxpro/huxblog-boilerplate.git
-```
-
-**[在这里预览模板 &rarr;](http://huangxuan.me/huxblog-boilerplate/)**
-
-## 各版本特性
-
-##### New Feature (V1.5.2)
-
-* 当你fork了我的仓库之后，还要删掉里面的关于我的文档是不是感到略烦躁呢？**Boilerplate** 模板将帮助你快速开始，方便合并与更新。
-* `-apple-system`被添加到了字体规则里面了，这套字体格式能将iOS9默认的新字体**San Francisco**表现的非常漂亮。
-* 解决了代码过长自动换行的bug,替换为横向滚动条。详情请见[issue#15](https://github.com/Huxpro/huxpro.github.io/issues/15)
-
-###### 其他历史版本个人觉得没有必要了解，看看英文就行了。
-
-## 支持
-
-* 你可以自由的fork。如果你能将主题作者和 github 的地址保留在你的页面底部，我将非常感谢你。
-* 如果你喜欢我的这个博客模板，请在 `huxpro.github.io`这个repository点个赞——右上角**star**一下。
+### [我的博客在这里 &rarr;](http://abining.fun)
 
 ## 说明文档
 
@@ -243,11 +203,28 @@ JavaScript 的压缩混淆、Less 的编译、Apache 2.0 许可通告的添加�
 
 但是需要注意的是本模板的标题是**白色**的，所以背景色要设置为**灰色**或者**黑色**，总之深色系就对了。当然你还可以自定义修改字体颜色，总之，用github pages就是可以完全的个性定制自己的博客。
 
+
 #### SEO Title
 
 我的博客标题是 **“Hux Blog”** 但是我想要在搜索的时候显示 **“黄玄的博客 | Hux Blog”** ，这个就需要SEO Title来定义了。
 
 其实这个SEO Title就是定义了 `<head><title>`标题 `</title></head>`这个里面的东西和多说分享的标题，你可以自行修改的。
+
+
+### 关于收到"Page Build Warning"的email
+
+由于jekyll升级到3.0.x,对原来的pygments代码高亮不再支持，现只支持一种-rouge，所以你需要在 `_config.yml`文件中修改 `highlighter: rouge`.另外还需要在 `_config.yml`文件中加上 `gems: [jekyll-paginate]`.
+
+同时,你需要更新你的本地jekyll环境.
+
+使用 `jekyll server`的同学需要这样：
+
+1. `gem update jekyll` # 更新jekyll
+2. `gem update github-pages` #更新依赖的包
+
+使用 `bundle exec jekyll server`的同学在更新jekyll后，需要输入 `bundle update`来更新依赖的包.
+
+参考文档：[using jekyll with pages](https://help.github.com/articles/using-jekyll-with-pages/) & [Upgrading from 2.x to 3.x](http://jekyllrb.com/docs/upgrading/2-to-3/)
 
 ## 致谢
 
@@ -256,3 +233,4 @@ JavaScript 的压缩混淆、Less 的编译、Apache 2.0 许可通告的添加�
 1. 这个模板是从这里[IronSummitMedia/startbootstrap-clean-blog-jekyll](https://github.com/IronSummitMedia/startbootstrap-clean-blog-jekyll)  fork 的。 感谢这个作者
 2. 感谢[@BrucZhaoR](https://github.com/BruceZhaoR)的中文翻译
 3. 感谢 Jekyll、Github Pages 和 Bootstrap!
+
