@@ -2,7 +2,7 @@
 layout: resume
 title: "RESUME"
 description: "Web前端开发工程师"
-header-img: "img/post-bg-resume.jpg"
+header-img: "img/working-hard.jpg"
 ---
 ## 教育背景
 

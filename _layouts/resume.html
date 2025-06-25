@@ -4,7 +4,7 @@ layout: default
 
 <!-- Page Header -->
 <header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
-    <div class="container">
+    <div class="container" style="height: 350px;">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="site-heading">
@@ -40,7 +40,8 @@ layout: default
                 <!-- 个人头像 -->
                 <div class="short-about">
                     <div class="avatar-container">
-                        <img src="{{ site.baseurl }}/img/avatar.png" alt="个人头像">
+                        <img src="https://github.com/abining.png" alt="个人头像">
+                        <!-- <img src="{{ site.baseurl }}/img/avatar.png" alt="个人头像"> -->
                     </div>
                     <h5>肖伊斌</h5>
                     <div class="personal-info">
@@ -192,9 +193,10 @@ layout: default
     }
 
     .custom-icon {
-        width: 15px;
-        height: 15px;
-        vertical-align: middle;
+        width: 20px;
+        height: 20px;
+        vertical-align: top;
+        margin-top: 8px;
     }
 
     .wechat-link {
