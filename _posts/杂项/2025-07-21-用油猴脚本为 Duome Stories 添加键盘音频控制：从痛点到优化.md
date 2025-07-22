@@ -11,7 +11,6 @@ tags:
     - Tampermonkey
     - 音频预加载
 ---
-
 # 🎧 用油猴脚本为 Duome Stories 添加键盘音频控制：从痛点到优化
 
 ---
@@ -214,3 +213,6 @@ GM_setValue('shortcuts', config);
 
 花了小半天的时间写的，也希望能对其他人有作用吧。
 
+脚本地址：[https://update.greasyfork.org/scripts/543204/Duome%20Stories%20Audio%20Controller.user.js](https://update.greasyfork.org/scripts/543204/Duome%20Stories%20Audio%20Controller.user.js)
+
+github仓库地址：[https://github.com/abining/tampermonkey](https://github.com/abining/tampermonkey)
