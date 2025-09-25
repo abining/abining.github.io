@@ -3,8 +3,8 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-# Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Deploy Jekyll site to Pages
+# Sample workflow for building and deploying a Jekyll site to Aliyun
+name: 部署Jekyll博客到阿里云
 
 on:
   # Runs on pushes targeting the default branch
@@ -50,10 +50,6 @@ jobs: # 工作任务
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
-      - name: Deploy via HTTP
-        run: |
-          zip -r site.zip _site
-          curl -X POST -F "file=@site.zip" http://114.55.210.63:3000/upload
 
   # Deployment job
   deploy:
@@ -66,3 +62,20 @@ jobs: # 工作任务
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: 部署到阿里云服务器
+        uses: easingthemes/ssh-deploy@main
+        env:
+          # SSH私钥
+          SSH_PRIVATE_KEY: ${{ secrets.ALIYUN_SSH_KEY }}
+          # SCP参数
+          ARGS: '-avzr --delete'
+          # 源目录（Jekyll构建后的_site目录）
+          SOURCE: '_site/'
+          # 服务器IP
+          REMOTE_HOST: ${{ secrets.ALIYUN_HOST }}
+          # 服务器用户名
+          REMOTE_USER: ${{ secrets.ALIYUN_USER }}
+          # 目标目录
+          TARGET: '${{ secrets.REMOTE_TARGET }}'
+      - name: 部署完成
+        run: echo "Jekyll博客部署完成！"
