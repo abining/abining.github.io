@@ -36,7 +36,7 @@ jobs: # 工作任务
       - name: Setup Ruby
         uses: ruby/setup-ruby@8575951200e472d5f2d95c625da0c7bec8217c42 # v1.161.0
         with:
-          ruby-version: '3.1' # Not needed with a .ruby-version file
+          ruby-version: "3.1" # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
       - name: Setup Pages
@@ -50,6 +50,23 @@ jobs: # 工作任务
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
+      - name: 部署到阿里云服务器
+        uses: easingthemes/ssh-deploy@main
+        env:
+          # SSH私钥
+          SSH_PRIVATE_KEY: ${{ secrets.ALIYUN_SSH_KEY }}
+          # SCP参数
+          ARGS: "-avzr --delete"
+          # 源目录（Jekyll构建后的_site目录）
+          SOURCE: "_site/"
+          # 服务器IP
+          REMOTE_HOST: ${{ secrets.ALIYUN_HOST }}
+          # 服务器用户名
+          REMOTE_USER: ${{ secrets.ALIYUN_USER }}
+          # 目标目录
+          TARGET: "${{ secrets.REMOTE_TARGET }}"
+      - name: 阿里云部署完成
+        run: echo "阿里云服务器部署完成！"
 
   # Deployment job
   deploy:
@@ -58,24 +75,9 @@ jobs: # 工作任务
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
-    steps: 
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-      - name: 部署到阿里云服务器
-        uses: easingthemes/ssh-deploy@main
-        env:
-          # SSH私钥
-          SSH_PRIVATE_KEY: ${{ secrets.ALIYUN_SSH_KEY }}
-          # SCP参数
-          ARGS: '-avzr --delete'
-          # 源目录（Jekyll构建后的_site目录）
-          SOURCE: '_site/'
-          # 服务器IP
-          REMOTE_HOST: ${{ secrets.ALIYUN_HOST }}
-          # 服务器用户名
-          REMOTE_USER: ${{ secrets.ALIYUN_USER }}
-          # 目标目录
-          TARGET: '${{ secrets.REMOTE_TARGET }}'
-      - name: 部署完成
-        run: echo "Jekyll博客部署完成！"
+      - name: GitHub Pages部署完成
+        run: echo "GitHub Pages部署完成！"
