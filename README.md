@@ -72,7 +72,7 @@ tags:
 layout: post
 categories: [Map] # 文章分类，tags的替代
 author: abining
-title: 油猴脚本管理教程：发布、同步与实用技巧
+title: 文章标题
 header-style: text
 catalog: true
 tags:
