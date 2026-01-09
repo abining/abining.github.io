@@ -9,10 +9,6 @@ tags:
     - tools
     - Karabiner-Elements
 ---
-macOS M4 远程连接 Windows：完美解决“Windows App”键位冲突，Karabiner-Elements 映射全指南
-
-
-# macOS 远程连接 Windows：完美解决“Windows App”键位冲突，Karabiner-Elements 映射全指南
 
 ## 前言
 
@@ -38,6 +34,7 @@ macOS 与 Windows 的键盘布局存在底层逻辑冲突：
 首先需要安装这款强大的 macOS 改键工具。
 
 - **下载地址**：[官网链接](https://karabiner-elements.pqrs.org/)
+- **Github下载地址**：  [github.com/pqrs-org/Ka…](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fpqrs-org%2FKarabiner-Elements%2Freleases "https://github.com/pqrs-org/Karabiner-Elements/releases")
 
   ![](https://raw.githubusercontent.com/abining/picgo_imgs/main/images20260109151929981.png)
 -   **安装注意**：在 M4 芯片上安装后，系统会提示“系统扩展已被阻止”，请前往 **系统设置 > 隐私与安全性**，手动点击“允许”并重启系统。
