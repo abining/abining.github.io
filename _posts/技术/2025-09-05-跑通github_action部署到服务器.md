@@ -7,9 +7,9 @@ catalog: true
 header-img: "img/post-bg-githubaction-ssh.jpg"
 header-mask: 0.4
 tags:
-    - 前端
-    - 部署
-    - github action
+  - 前端
+  - 部署
+  - github action
 ---
 
 # 前端项目自动化部署改造方案
@@ -17,12 +17,14 @@ tags:
 ## 背景
 
 传统的静态网站部署通常需要手动执行以下步骤：
+
 1. 本地构建项目
 2. 手动上传构建文件到服务器
-3. 配置Nginx虚拟主机
-4. 重启Web服务
+3. 配置 Nginx 虚拟主机
+4. 重启 Web 服务
 
 这种手动部署方式存在以下问题：
+
 - 部署过程繁琐，容易出错
 - 无法保证部署的一致性
 - 缺乏版本控制和回滚机制
@@ -33,7 +35,7 @@ tags:
 采用 **GitHub Actions + SSH** 的自动化部署方案，通过 [easingthemes/ssh-deploy](https://github.com/easingthemes/ssh-deploy) 实现代码推送即自动部署。
 
 > **⚠️ 重要提示**
-> 
+>
 > 1. **本文档面向已配置好 Nginx 的用户**，假设您已经知道如何配置 Nginx 虚拟主机
 > 2. **SSH 密钥最好不设置密码短语**，否则 GitHub Actions 无法自动认证
 > 3. **请根据您的实际部署目录调整配置**，本文档以 `/var/www/pic-admin` 为例
@@ -51,18 +53,18 @@ tags:
 
 ### 主要参数
 
-| 参数 | 类型 | 必需 | 说明 |
-|------|------|------|------|
-| `SSH_PRIVATE_KEY` | string | 是 | SSH 私钥内容 |
-| `REMOTE_HOST` | string | 是 | 服务器 IP 或域名 |
-| `REMOTE_USER` | string | 是 | 服务器用户名 |
-| `REMOTE_PORT` | string | 否 | SSH 端口，默认 22 |
-| `ARGS` | string | 否 | rsync 参数，默认 `-rlgoDzvc -i` |
-| `SOURCE` | string | 否 | 源目录，相对于工作空间根目录 |
-| `TARGET` | string | 否 | 目标目录，默认 `/home/REMOTE_USER/` |
-| `EXCLUDE` | string | 否 | 排除路径，用逗号分隔 |
-| `SCRIPT_BEFORE` | string | 否 | 部署前执行的脚本 |
-| `SCRIPT_AFTER` | string | 否 | 部署后执行的脚本 |
+| 参数              | 类型   | 必需 | 说明                                |
+| ----------------- | ------ | ---- | ----------------------------------- |
+| `SSH_PRIVATE_KEY` | string | 是   | SSH 私钥内容                        |
+| `REMOTE_HOST`     | string | 是   | 服务器 IP 或域名                    |
+| `REMOTE_USER`     | string | 是   | 服务器用户名                        |
+| `REMOTE_PORT`     | string | 否   | SSH 端口，默认 22                   |
+| `ARGS`            | string | 否   | rsync 参数，默认 `-rlgoDzvc -i`     |
+| `SOURCE`          | string | 否   | 源目录，相对于工作空间根目录        |
+| `TARGET`          | string | 否   | 目标目录，默认 `/home/REMOTE_USER/` |
+| `EXCLUDE`         | string | 否   | 排除路径，用逗号分隔                |
+| `SCRIPT_BEFORE`   | string | 否   | 部署前执行的脚本                    |
+| `SCRIPT_AFTER`    | string | 否   | 部署后执行的脚本                    |
 
 ## 部署架构
 
@@ -164,7 +166,7 @@ name: 部署图床管理后台到阿里云
 on:
   push:
     branches:
-      - main  # 推送到 main 分支时触发部署
+      - main # 推送到 main 分支时触发部署
 
 jobs:
   deploy:
@@ -178,8 +180,8 @@ jobs:
       - name: 安装 Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'pnpm'
+          node-version: "20"
+          cache: "pnpm"
 
       # 安装依赖
       - name: 安装依赖
@@ -196,15 +198,15 @@ jobs:
           # SSH私钥
           SSH_PRIVATE_KEY: ${{ secrets.ALIYUN_SSH_KEY }}
           # SCP参数
-          ARGS: '-avzr --delete'
+          ARGS: "-avzr --delete"
           # 源目录（Vite构建后的dist目录）
-          SOURCE: 'dist/'
+          SOURCE: "dist/"
           # 服务器IP
           REMOTE_HOST: ${{ secrets.ALIYUN_HOST }}
           # 服务器用户名
           REMOTE_USER: ${{ secrets.ALIYUN_USER }}
           # 目标目录
-          TARGET: '/var/www/pic-admin'
+          TARGET: "/var/www/pic-admin"
 
       # 部署完成通知
       - name: 部署完成
@@ -255,6 +257,7 @@ jobs:
 #### 5.2 常见问题排查
 
 **SSH 认证失败（Permission denied）**：
+
 ```bash
 # 检查 SSH 服务状态
 sudo systemctl status ssh
@@ -269,6 +272,7 @@ ssh-keygen -m PEM -t rsa -b 4096 -C "github-actions" -f ~/.ssh/github_actions
 ```
 
 **文件权限问题**：
+
 ```bash
 # 修复文件权限
 sudo chown -R $USER:$USER /var/www/pic-admin
@@ -276,6 +280,7 @@ sudo chmod -R 755 /var/www/pic-admin
 ```
 
 **网络连接问题**：
+
 ```bash
 # 检查阿里云安全组是否开放SSH端口22
 # 确保允许 0.0.0.0/0 访问SSH端口（临时测试用）
@@ -286,6 +291,7 @@ sudo iptables -L
 ```
 
 **部署目录不存在**：
+
 ```bash
 # 确保目标目录存在
 sudo mkdir -p /var/www/pic-admin
@@ -306,7 +312,7 @@ sudo chown -R $USER:$USER /var/www/pic-admin
   with:
     SSH_PRIVATE_KEY: ${{ secrets.DEV_SSH_KEY }}
     REMOTE_HOST: ${{ secrets.DEV_HOST }}
-    TARGET: '/var/www/pic-admin-dev'
+    TARGET: "/var/www/pic-admin-dev"
 
 # 生产环境
 - name: 部署到生产环境
@@ -315,7 +321,7 @@ sudo chown -R $USER:$USER /var/www/pic-admin
   with:
     SSH_PRIVATE_KEY: ${{ secrets.PROD_SSH_KEY }}
     REMOTE_HOST: ${{ secrets.PROD_HOST }}
-    TARGET: '/var/www/pic-admin'
+    TARGET: "/var/www/pic-admin"
 ```
 
 #### 6.2 部署前备份
@@ -350,22 +356,27 @@ sudo chown -R $USER:$USER /var/www/pic-admin
 ## 优势总结
 
 ### 1. 自动化程度高
+
 - 代码推送即自动部署，无需手动干预
 - 减少人为错误，提高部署一致性
 
 ### 2. 部署效率高
+
 - 使用 rsync 只传输变更文件，传输速度快
 - 并行执行构建和部署，节省时间
 
 ### 3. 安全可靠
+
 - 基于 SSH 密钥认证，安全性高
 - 支持回滚和版本控制
 
 ### 4. 易于维护
+
 - 集中化的配置管理
 - 详细的部署日志和状态监控
 
 ### 5. 成本效益
+
 - 利用 GitHub Actions 的免费额度
 - 减少服务器维护成本
 

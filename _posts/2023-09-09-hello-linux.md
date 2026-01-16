@@ -9,7 +9,7 @@ header-mask: 0.4
 # layout:     keynote
 # iframe:     "http://huangxuan.me/js-module-7day/"
 catalog: true
-tags: [Linux ,技术 ,笔记]
+tags: [Linux, 技术, 笔记]
 ---
 
 > "Linux 是一个免费的类 Unix 操作系统，它代表着开源精神和技术自由。" —— [Linus Torvalds](https://github.com/torvalds)
@@ -23,11 +23,13 @@ tags: [Linux ,技术 ,笔记]
 > "选择 Linux 不仅仅是选择一个操作系统，更是选择了一种生活方式。" —— [Linux Foundation](https://www.linuxfoundation.org/)
 
 ### 开源精神
+
 - 自由查看源代码
 - 可以自由修改和分发
 - 强大的社区支持
 
 ### 技术优势
+
 - 稳定性强
 - 安全性高
 - 资源占用少
@@ -45,6 +47,7 @@ tags: [Linux ,技术 ,笔记]
 > "系统管理是 Linux 运维中最重要的一环，它直接关系到系统的安全性和稳定性。"
 
 基本操作包括：
+
 - 用户管理
 - 权限设置
 - 进程控制
@@ -52,10 +55,10 @@ tags: [Linux ,技术 ,笔记]
 
 ## Linux 发行版选择
 
-| 发行版 | 特点 | 官方网站 |
-|--------|------|----------|
-| Ubuntu | 用户友好 | [ubuntu.com](https://ubuntu.com) |
-| CentOS | 稳定可靠 | [centos.org](https://www.centos.org) |
+| 发行版 | 特点     | 官方网站                               |
+| ------ | -------- | -------------------------------------- |
+| Ubuntu | 用户友好 | [ubuntu.com](https://ubuntu.com)       |
+| CentOS | 稳定可靠 | [centos.org](https://www.centos.org)   |
 | Arch   | 高度定制 | [archlinux.org](https://archlinux.org) |
 
 ## 进阶学习路线
@@ -64,11 +67,13 @@ tags: [Linux ,技术 ,笔记]
 > "掌握 Linux 需要循序渐进，从基础命令到系统架构，每一步都很重要。"
 
 1. **基础知识**
+
    - [Shell 基础](https://www.shellscript.sh/)
    - [文件系统](https://www.linux.com/training-tutorials/linux-filesystem-explained/)
    - [进程管理](https://www.tecmint.com/linux-process-management/)
 
 2. **网络配置**
+
    - [TCP/IP 基础](https://www.networkworld.com/article/3242170/tcp-ip-explained.html)
    - [防火墙设置](https://www.digitalocean.com/community/tutorials/iptables-essentials)
 
@@ -78,9 +83,10 @@ tags: [Linux ,技术 ,笔记]
 
 ## 实用工具推荐
 
-> "工欲善其事，必先利其器。" 
+> "工欲善其事，必先利其器。"
 
 1. **终端工具**
+
    - [Oh My Zsh](https://ohmyz.sh/) - 终端美化工具
    - [tmux](https://github.com/tmux/tmux) - 终端复用工具
    - [htop](https://htop.dev/) - 系统监控工具
@@ -98,6 +104,7 @@ tags: [Linux ,技术 ,笔记]
 1. 系统日志查看
 
 > 推荐工具：[Glances](https://nicolargo.github.io/glances/) - 系统监控工具
+>
 > ```bash
 > sudo apt install glances  # Ubuntu/Debian
 > glances  # 运行
@@ -109,28 +116,31 @@ tags: [Linux ,技术 ,笔记]
 > "系统性能问题通常需要从多个维度进行分析。"
 
 - CPU 相关
+
   ```bash
   # 查看 CPU 负载
   uptime
-  
+
   # 查看进程 CPU 使用率
   ps aux --sort=-%cpu | head -n 10
   ```
 
 - 内存相关
+
   ```bash
   # 查看内存占用最多的进程
   ps aux --sort=-%mem | head -n 10
-  
+
   # 查看缓存使用情况
   cat /proc/meminfo
   ```
 
 - 磁盘相关
+
   ```bash
   # 查找大文件
   find / -type f -size +100M -exec ls -lh {} \;
-  
+
   # 检查磁盘健康状态
   sudo smartctl -a /dev/sda
   ```
@@ -140,12 +150,14 @@ tags: [Linux ,技术 ,笔记]
 > 来自 [Linux Performance Tuning](https://www.kernel.org/doc/Documentation/sysctl/):
 
 - 文件系统优化
+
   ```bash
   # 调整文件描述符限制
   ulimit -n 65535
   ```
 
 - 网络优化
+
   ```bash
   # 查看当前网络连接状态
   netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'
@@ -160,17 +172,17 @@ tags: [Linux ,技术 ,笔记]
 
 5. 常用性能监控命令速查
 
-| 命令 | 用途 | 示例 |
-|------|------|------|
-| top | CPU/内存监控 | `top -u username` |
-| iostat | IO监控 | `iostat -x 1` |
-| netstat | 网络连接 | `netstat -tunlp` |
-| vmstat | 虚拟内存 | `vmstat 1` |
-| sar | 系统活动 | `sar -u 1 5` |
+| 命令    | 用途         | 示例              |
+| ------- | ------------ | ----------------- |
+| top     | CPU/内存监控 | `top -u username` |
+| iostat  | IO 监控      | `iostat -x 1`     |
+| netstat | 网络连接     | `netstat -tunlp`  |
+| vmstat  | 虚拟内存     | `vmstat 1`        |
+| sar     | 系统活动     | `sar -u 1 5`      |
 
 > 更多系统监控工具可以参考：[Linux Performance Tools](http://techblog.netflix.com/2015/11/linux-performance-analysis-in-60s.html)
 
-## 未来计划（关于计算机system）
+## 未来计划（关于计算机 system）
 
 - [ ] 深入学习 Shell 脚本
 - [ ] 掌握系统管理技能

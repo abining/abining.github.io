@@ -1,14 +1,15 @@
 ---
-layout:       post
-title:        "JavaScript 二十年"
-author:       "Ebin"
+layout: post
+title: "JavaScript 二十年"
+author: "Ebin"
 header-style: text
 # date:       2024-10-29 00:00:02
-catalog:      true
+catalog: true
 tags:
-    - Web
-    - JavaScript
+  - Web
+  - JavaScript
 ---
+
 ### 推荐语
 
 《JavaScript 二十年》是一部不可多得的编程语言历史著作，它既是对 JavaScript 的回顾，也是对网络和现代编程文化发展的观察。JavaScript 经常被认为是一门偶然成功的语言，但在这本书中，作者通过丰富的历史细节和独到的见解，展示了它如何在复杂的环境中脱颖而出，从浏览器脚本小工具成长为如今不可替代的全栈编程语言。对每个开发者来说，理解 JavaScript 的历史不仅能更好地理解它的特性和妥协，也能从中汲取到未来技术发展的线索。
@@ -77,48 +78,26 @@ tags:
 
 [从网文到印刷：《JavaScript 二十年》出版啦！](https://zhuanlan.zhihu.com/p/373065151)
 
-[^1]: [Flanagan, D. (2020). *JavaScript: The Definitive Guide*. O&amp;#39;Reilly Media.](https://www.oreilly.com/library/view/javascript-the-definitive/9781491952023/)
-    
-[^2]: [Crockford, D. (2008). *JavaScript: The Good Parts*. O&amp;#39;Reilly Media.](https://www.oreilly.com/library/view/javascript-the-good/9780596517748/)
-    
+[^1]: [Flanagan, D. (2020). _JavaScript: The Definitive Guide_. O&amp;#39;Reilly Media.](https://www.oreilly.com/library/view/javascript-the-definitive/9781491952023/)
+[^2]: [Crockford, D. (2008). _JavaScript: The Good Parts_. O&amp;#39;Reilly Media.](https://www.oreilly.com/library/view/javascript-the-good/9780596517748/)
 [^3]: [Eich, B. (2016). Brendan Eich on JavaScript&amp;#39;s Origins. ACM Queue.](https://queue.acm.org/detail.cfm?id=2894776)
-    
-[^4]: [Resig, J., &amp;amp; Bibeault, B. (2013). *Secrets of the JavaScript Ninja*. Manning Publications.](https://www.manning.com/books/secrets-of-the-javascript-ninja-second-edition)
-    
+[^4]: [Resig, J., &amp;amp; Bibeault, B. (2013). _Secrets of the JavaScript Ninja_. Manning Publications.](https://www.manning.com/books/secrets-of-the-javascript-ninja-second-edition)
 [^5]: [Microsoft. (1996). Introduction to JScript. Microsoft Documentation.](https://docs.microsoft.com/en-us/scripting/javascript)
-    
-[^6]: [Zakas, N. C. (2010). *Professional JavaScript for Web Developers*. Wrox Press.](https://www.wiley.com/en-us/Professional+JavaScript+for+Web+Developers%2C+3rd+Edition-p-9781118026694)
-    
-[^7]: [ECMA International. (1997). *ECMAScript Language Specification*.](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)
-    
-[^8]: [Waldrop, M. M. (1999). The Battle for Browser Supremacy. *Scientific American*.](https://www.scientificamerican.com/article/the-battle-for-browser-supremacy/)
-    
-[^9]: [Fowler, M. (2003). *Refactoring: Improving the Design of Existing Code*. Addison-Wesley.](https://martinfowler.com/books/refactoring.html)
-    
+[^6]: [Zakas, N. C. (2010). _Professional JavaScript for Web Developers_. Wrox Press.](https://www.wiley.com/en-us/Professional+JavaScript+for+Web+Developers%2C+3rd+Edition-p-9781118026694)
+[^7]: [ECMA International. (1997). _ECMAScript Language Specification_.](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)
+[^8]: [Waldrop, M. M. (1999). The Battle for Browser Supremacy. _Scientific American_.](https://www.scientificamerican.com/article/the-battle-for-browser-supremacy/)
+[^9]: [Fowler, M. (2003). _Refactoring: Improving the Design of Existing Code_. Addison-Wesley.](https://martinfowler.com/books/refactoring.html)
 [^10]: [Garrett, J. J. (2005). Ajax: A New Approach to Web Applications. Adaptive Path.](https://adaptivepath.org/ideas/ajax-new-approach-web-applications/)
-    
-[^11]: [Chaffer, J., &amp;amp; Swedberg, K. (2010). *Learning jQuery*. Packt Publishing.](https://learningjquery.com/)
-    
-[^12]: [ECMAScript. (2015). *ECMAScript 2015 Language Specification*. ECMA International.](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)
-    
-[^13]: [Simpson, K. C. (2015). *You Don't Know JS: ES6 & Beyond*. O&amp;#39;Reilly Media.](https://github.com/getify/You-Dont-Know-JS)
-    
-[^14]: [Tilkov, S., &amp;amp; Vinoski, S. (2010). Node.js: Using JavaScript to Build High-Performance Network Programs. *IEEE Internet Computing*.](https://ieeexplore.ieee.org/document/5288725)
-    
-[^15]: [Crockford, D. (2008). *JavaScript: The Good Parts*. O&amp;#39;Reilly Media.](https://www.oreilly.com/library/view/javascript-the-good/9780596517748/)
-    
+[^11]: [Chaffer, J., &amp;amp; Swedberg, K. (2010). _Learning jQuery_. Packt Publishing.](https://learningjquery.com/)
+[^12]: [ECMAScript. (2015). _ECMAScript 2015 Language Specification_. ECMA International.](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)
+[^13]: [Simpson, K. C. (2015). _You Don't Know JS: ES6 & Beyond_. O&amp;#39;Reilly Media.](https://github.com/getify/You-Dont-Know-JS)
+[^14]: [Tilkov, S., &amp;amp; Vinoski, S. (2010). Node.js: Using JavaScript to Build High-Performance Network Programs. _IEEE Internet Computing_.](https://ieeexplore.ieee.org/document/5288725)
+[^15]: [Crockford, D. (2008). _JavaScript: The Good Parts_. O&amp;#39;Reilly Media.](https://www.oreilly.com/library/view/javascript-the-good/9780596517748/)
 [^16]: [Bierman, G., Abadi, M., &amp;amp; Torgersen, M. (2014). Understanding TypeScript. ACM SIGPLAN Notices.](https://dl.acm.org/doi/10.1145/2663171.2663177)
-    
 [^17]: [Rubin, J. (2013). Inside the Google V8 JavaScript Engine. Google Developers Blog.](https://developers.google.com/v8/)
-    
-[^18]: [npm, Inc. (2014). *The npm Documentation*. npmjs.com.](https://docs.npmjs.com/)
-    
-[^19]: [Abramov, D., &amp;amp; Clark, A. (2015). *Redux Documentation*. GitHub.](https://redux.js.org/)
-    
-[^20]: [Electron Contributors. (2019). *Electron Documentation*. GitHub.](https://www.electronjs.org/docs)
-    
-[^21]: [Haas, A., Rossberg, A., Schuff, D., et al. (2017). Bringing the Web up to Speed with WebAssembly. *ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI)*.](https://dl.acm.org/doi/10.1145/3062341.3062363)
-    
-[^22]: [Zakai, A. (2013). Emscripten: An LLVM-to-JavaScript Compiler. *Proceedings of the ACM International Conference on Object Oriented Programming Systems Languages & Applications (OOPSLA)*.](https://dl.acm.org/doi/10.1145/2509136.2509533)
-    
-[^23]: [Wilson, R. (2020). *Deno: A Secure JavaScript and TypeScript Runtime*. Deno.land.](https://deno.land/)
+[^18]: [npm, Inc. (2014). _The npm Documentation_. npmjs.com.](https://docs.npmjs.com/)
+[^19]: [Abramov, D., &amp;amp; Clark, A. (2015). _Redux Documentation_. GitHub.](https://redux.js.org/)
+[^20]: [Electron Contributors. (2019). _Electron Documentation_. GitHub.](https://www.electronjs.org/docs)
+[^21]: [Haas, A., Rossberg, A., Schuff, D., et al. (2017). Bringing the Web up to Speed with WebAssembly. _ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI)_.](https://dl.acm.org/doi/10.1145/3062341.3062363)
+[^22]: [Zakai, A. (2013). Emscripten: An LLVM-to-JavaScript Compiler. _Proceedings of the ACM International Conference on Object Oriented Programming Systems Languages & Applications (OOPSLA)_.](https://dl.acm.org/doi/10.1145/2509136.2509533)
+[^23]: [Wilson, R. (2020). _Deno: A Secure JavaScript and TypeScript Runtime_. Deno.land.](https://deno.land/)

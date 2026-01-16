@@ -1,16 +1,3 @@
----
-layout: post
-categories: [网络] # 文章分类，tags的替代
-author: abining
-title: OpenWrt (x86) 上将 Tailscale 配置为子网路由（Subnet Router）
-header-style: text
-catalog: true
-tags:
-  - 网络
-  - tailscale
-  - openwrt
----
-
 在 OpenWrt (x86) 上将 Tailscale 配置为**子网路由（Subnet Router）** ，可以让您在外部远程访问家里的所有设备（如 NAS、智能家居、路由器后台），而无需在每个设备上都安装 Tailscale。
 
 由于 OpenWrt 的特殊性，除了在网页端勾选设置外，还需要处理防火墙逻辑。
@@ -23,10 +10,10 @@ tags:
 tailscale up --advertise-routes=192.168.0.0/24 --accept-dns=false
 ```
 
-- **注意：** 请根据你实际的 LAN 口网段修改 `192.168.0.0/24`。
-- `--accept-dns=false` 通常建议加上，防止 Tailscale 的 DNS 配置干扰 OpenWrt 本身的 DNS 解析。
+-   **注意：** 请根据你实际的 LAN 口网段修改 `192.168.0.0/24`。
+-   `--accept-dns=false` 通常建议加上，防止 Tailscale 的 DNS 配置干扰 OpenWrt 本身的 DNS 解析。
 
----
+* * *
 
 ### 第二步：在 Tailscale 后台批准路由
 
@@ -47,24 +34,24 @@ OpenWrt 默认会丢弃来自未识别接口的转发流量。为了让 Tailscal
 
 在 OpenWrt 后台：**网络 (Network) -> 接口 (Interfaces)** ：
 
-- 添加新接口，名称定为 `tailscale`。
-- 协议选择 **不配置协议 (Unmanaged)** 。
-- 设备选择 **tailscale0**。
-  ![](https://raw.githubusercontent.com/abining/picgo_imgs/main/imagesimage-20260108163340166.png)
+-   添加新接口，名称定为 `tailscale`。
+-   协议选择 **不配置协议 (Unmanaged)** 。
+-   设备选择 **tailscale0**。
+    ![](https://raw.githubusercontent.com/abining/picgo_imgs/main/imagesimage-20260108163340166.png)
 
 #### 2. 配置防火墙区域
 
 前往：**网络 (Network) -> 防火墙 (Firewall)** ：
 
-- 新建一个区域，名称定为 `tailscale`。
-- **入站数据 (Input):** accept
-- **出站数据 (Output):** accept
-- **转发 (Forward):** accept
-- **允许从源区域转发:** 勾选 `lan`。
-- **允许转发到目标区域:** 勾选 `lan`。
-- **设备/接口:** 选择刚才创建的 `tailscale` 接口。
+-   新建一个区域，名称定为 `tailscale`。
+-   **入站数据 (Input):** accept
+-   **出站数据 (Output):** accept
+-   **转发 (Forward):** accept
+-   **允许从源区域转发:** 勾选 `lan`。
+-   **允许转发到目标区域:** 勾选 `lan`。
+-   **设备/接口:** 选择刚才创建的 `tailscale` 接口。
 
----
+* * *
 
 ### 第四步：开启 IP 动态伪装 (Masquerading)
 
@@ -75,7 +62,7 @@ OpenWrt 默认会丢弃来自未识别接口的转发流量。为了让 Tailscal
 1.  勾选 **MSS 锁定 (MSS Clamping)** 。
     ![](https://raw.githubusercontent.com/abining/picgo_imgs/main/images20260108172005143.png)
 
----
+* * *
 
 ### 验证连接
 
@@ -85,3 +72,6 @@ OpenWrt 默认会丢弃来自未识别接口的转发流量。为了让 Tailscal
 ## 最后
 
 计算机网络里面的东西太多，太精妙了。这个系统真复杂。
+
+
+

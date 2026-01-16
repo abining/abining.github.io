@@ -43,6 +43,7 @@ jobs: # 工作任务
         id: pages
         uses: actions/configure-pages@v5
       - name: Inject Gitalk Secrets
+        continue-on-error: true
         env:
           GITALK_CLIENT_ID: ${{ secrets.GITALK_CLIENT_ID }}
           GITALK_CLIENT_SECRET: ${{ secrets.GITALK_CLIENT_SECRET }}
@@ -58,7 +59,9 @@ jobs: # 工作任务
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
       - name: 部署到阿里云服务器
+        id: deploy_aliyun # 添加 ID 以便后续步骤引用状态
         uses: easingthemes/ssh-deploy@main
+        continue-on-error: true # 即使此步骤失败（如因缺少密钥），也不影响后续步骤
         env:
           # SSH私钥
           SSH_PRIVATE_KEY: ${{ secrets.ALIYUN_SSH_KEY }}
@@ -73,6 +76,7 @@ jobs: # 工作任务
           # 目标目录
           TARGET: "${{ secrets.REMOTE_TARGET }}"
       - name: 阿里云部署完成
+        if: steps.deploy_aliyun.outcome == 'success' # 只有部署成功才显示完成信息
         run: echo "阿里云服务器部署完成！"
 
   # Deployment job
