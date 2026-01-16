@@ -21,6 +21,10 @@
   - [自定义](#customization)
   - [标题底图](#header-image)
   - [搜索展示标题-头文件](#seo-title)
+- 部署上线
+  - [个人静态部署](#个人静态部署)
+  - [github Action 自动构建部署](#github-action-自动构建部署)
+  - [部署到个人服务器](#部署到个人服务器)
 
 #### Environment
 
@@ -32,15 +36,15 @@
 
 你可以通用修改 `_config.yml`文件来轻松的开始搭建自己的博客:
 
-```
+```yaml
 # Site settings
-title: Ebin Blog             # 你的博客网站标题
-SEOTitle: Ebin Blog			# 在后面会详细谈到
-description: "Cool Blog"    # 随便说点，描述一下
+title: Ebin Blog # 你的博客网站标题
+SEOTitle: Ebin Blog # 在后面会详细谈到
+description: "Cool Blog" # 随便说点，描述一下
 
 # SNS settings
-github_username: abining     # 你的github账号
-weibo_username: abining      # 你的微博账号，底部链接会自动更新的。
+github_username: abining # 你的github账号
+weibo_username: abining # 你的微博账号，底部链接会自动更新的。
 
 # Build settings
 # paginate: 10              # 一页你准备放几篇文章
@@ -129,18 +133,13 @@ featured-condition-size: 1     # A tag will be featured if the size of it is mor
 
 设置是在 `_config.yml`文件里面的 `Friends`那块，自己加吧。
 
-```
+```yaml
 # Friends
-friends: [
-    {
-        title: "Foo Blog",
-        href: "http://foo.github.io/"
-    },
-    {
-        title: "Bar Blog",
-        href: "http://bar.github.io"
-    }
-]
+friends:
+  [
+    { title: "Ebin Blog", href: "http://abining.github.io/" },
+    { title: "BoB Blog", href: "http://Bob.github.io" },
+  ]
 ```
 
 #### Keynote Layout
@@ -153,10 +152,10 @@ HTML5 幻灯片的排版：
 
 其主要原理是添加一个 `iframe`，在里面加入外部链接。你可以直接写到头文件里面去，详情请见下面的 yaml 头文件的写法。
 
-```
+```yaml
 ---
-layout:     keynote
-iframe:     "http://abining.github.io/js-module-7day/"
+layout: keynote
+iframe: "http://abining.github.io/js-module-7day/"
 ---
 ```
 
@@ -175,7 +174,7 @@ iframe 在不同的设备中，将会自动的调整大小。保留内边距是�
 
 **其次**，你只需要在下面的 yaml 头文件中设置一下就可以了。
 
-```
+```yaml
 duoshuo_username: _你的用户名_
 # 或者
 disqus_username: _你的用户名_
@@ -187,13 +186,13 @@ disqus_username: _你的用户名_
 
 网站分析，现在支持百度统计和 Google Analytics。需要去官方网站注册一下，然后将返回的 code 贴在下面：
 
-```
+```yaml
 # Baidu Analytics
 ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
 
 # Google Analytics
-ga_track_id: 'UA-49627206-1'            # 你用Google账号去注册一个就会给你一个这样的id
-ga_domain: huangxuan.me			# 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto。
+ga_track_id: "UA-49627206-1" # 你用Google账号去注册一个就会给你一个这样的id
+ga_domain: huangxuan.me # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto。
 ```
 
 #### Customization
@@ -218,6 +217,40 @@ JavaScript 的压缩混淆、Less 的编译、Apache 2.0 许可通告的添加�
 我的博客标题是 **“Hux Blog”** 但是我想要在搜索的时候显示 **“黄玄的博客 | Hux Blog”** ，这个就需要 SEO Title 来定义了。
 
 其实这个 SEO Title 就是定义了 `<head><title>`标题 `</title></head>`这个里面的东西和多说分享的标题，你可以自行修改的。
+
+#### 部署上线
+
+##### 个人静态部署
+
+本博客基于 Jekyll，最简单的部署方式是利用 GitHub Pages。
+
+1.  将代码 fork 到你的仓库。
+2.  修改 `_config.yml` 中的配置。
+3.  推送代码到 `master` (或 `gh-pages`) 分支。
+4.  在仓库 Settings -> Pages 中开启 GitHub Pages。
+
+##### github Action 自动构建部署
+
+本项目配置了 GitHub Actions 自动构建，支持更复杂的构建流程（如插件支持）。
+
+- 配置文件位于：`.github/workflows/jekyll.yml`
+- 每次 push 代码会自动触发构建。
+- 如果需要使用 Gitalk 评论区，请并在 Secrets 中配置 `GITALK_CLIENT_ID` 和 `GITALK_CLIENT_SECRET`。
+
+##### 部署到个人服务器
+
+如果你想同时将博客部署到自己的阿里云/腾讯云服务器：
+
+1.  确保服务器已安装 Nginx/Apache 等 Web 服务器。
+2.  在 GitHub 仓库 Settings -> Secrets and variables -> Actions 中配置以下 Secrets：
+    - `ALIYUN_HOST`: 服务器 IP
+    - `ALIYUN_USER`: SSH 用户名 (如 root)
+    - `ALIYUN_SSH_KEY`: SSH 私钥
+    - `REMOTE_TARGET`: 服务器目标路径 (如 `/var/www/html`)
+3.  配置完成后，每次 push 会自动部署到你的服务器。
+
+以下是我的配置
+![](https://raw.githubusercontent.com/abining/picgo_imgs/main/imagesPixPin_2026-01-16_18-26-18.png)
 
 ### 关于收到"Page Build Warning"的 email
 
