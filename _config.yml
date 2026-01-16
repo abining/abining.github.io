@@ -50,50 +50,50 @@ plugins: [jekyll-paginate]
 # document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
 kramdown:
-  input: GFM                            # GitHub Flavored Markdown
-  syntax_highlighter: rouge             # 语法高亮
+  input: GFM # GitHub Flavored Markdown
+  syntax_highlighter: rouge # 语法高亮
   syntax_highlighter_opts:
     disable: false
-    default_lang: text                  # 默认语言
-    css_class: 'highlight'              # CSS类名
+    default_lang: text # 默认语言
+    css_class: "highlight" # CSS类名
     block:
       line_numbers: true
       start_line: 1
   # 关键配置
-  parse_block_html: false               # 不解析HTML块
-  parse_span_html: false                # 不解析行内HTML
-  hard_wrap: false                      # 不自动换行
-  auto_ids: true                        # 自动生成ID
-  entity_output: as_input               # 保持实体输出不变
-  toc_levels: 1..6                      # 目录级别
-  smart_quotes: apos,apos,quot,quot     # 智能引号
-  typographic_symbols: { hellip: ... }  # 排版符号
+  parse_block_html: false # 不解析HTML块
+  parse_span_html: false # 不解析行内HTML
+  hard_wrap: false # 不自动换行
+  auto_ids: true # 自动生成ID
+  entity_output: as_input # 保持实体输出不变
+  toc_levels: 1..6 # 目录级别
+  smart_quotes: apos,apos,quot,quot # 智能引号
+  typographic_symbols: { hellip: ... } # 排版符号
   # 特殊处理
-  template_engine: liquid              # 使用Liquid模板引擎
-  parse_html: false                    # 不解析HTML
-  html_to_native: false                # 不转换HTML为原生格式
-  auto_ids_prefix: ''                  # ID前缀
-  footnote_nr: 1                       # 脚注编号
-  enable_coderay: false                # 禁用coderay
+  template_engine: liquid # 使用Liquid模板引擎
+  parse_html: false # 不解析HTML
+  html_to_native: false # 不转换HTML为原生格式
+  auto_ids_prefix: "" # ID前缀
+  footnote_nr: 1 # 脚注编号
+  enable_coderay: false # 禁用coderay
   # 自定义处理器
-  custom_elements: ['route', 'switch'] # 自定义HTML元素
-  preserve_patterns:                   # 保留模式
-    - '/{{\s*[\s\S]*?\s*}}/m'         # 保留双大括号内容
-    - '/<[^>]*>/m'                    # 保留HTML标签
+  custom_elements: ["route", "switch"] # 自定义HTML元素
+  preserve_patterns: # 保留模式
+    - '/{{\s*[\s\S]*?\s*}}/m' # 保留双大括号内容
+    - "/<[^>]*>/m" # 保留HTML标签
 
 # Comments settings
 comment:
   type: gitalk
 gitalk:
-  owner: abining              # 您的 GitHub 用户名
-  repo: blog-comments         # 存储评论的仓库
-  clientID: Ov23liVPjfbjiJPerHtP    # OAuth Application 的 Client ID
-  clientSecret: df6ec6c27c501a6e8272b83abcbc7de53b194193  # OAuth Application 的 Client Secret
-  admin: abining             # 管理员用户名
-  labels: ['Gitalk']         # GitHub issue 的标签
-  perPage: 15                # 每页评论数
-  pagerDirection: last       # 排序方式是从最新的评论开始
-  createIssueManually: true  # 如果当前页面没有相应的 issue，需要手动创建
+  owner: abining # 您的 GitHub 用户名
+  repo: blog-comments # 存储评论的仓库
+  clientID: GITALK_CLIENT_ID_PLACEHOLDER # OAuth Application 的 Client ID
+  clientSecret: GITALK_CLIENT_SECRET_PLACEHOLDER # OAuth Application 的 Client Secret
+  admin: abining # 管理员用户名
+  labels: ["Gitalk"] # GitHub issue 的标签
+  perPage: 15 # 每页评论数
+  pagerDirection: last # 排序方式是从最新的评论开始
+  createIssueManually: true # 如果当前页面没有相应的 issue，需要手动创建
   distractionFreeMode: false # 是否启用无干扰模式
 
 # Analytics settings
@@ -102,7 +102,7 @@ gitalk:
 
 # Google Analytics
 ga_track_id: "G-EG97VSS3RM" # Format: UA-xxxxxx-xx
-ga_domain: www.abining.fun
+ga_domain: www.195501.xyz
 
 # Sidebar settings
 sidebar: true # whether or not using Sidebar.
@@ -121,9 +121,8 @@ service-worker: true
 page-mathjax: false
 
 # Friends
-friends:
-  [
-    { title: "person", href: "http://114.55.210.63/" },
+friends: [
+    { title: "person", href: "http://www.195501.xyz/" },
     # { title: "Ebn Zhang", href: "https://ebnbin.dev/" },
     # { title: "Kun Qian", href: "http://kunq.me" },
     # { title: "Sherry Woo", href: "https://sherrywoo.me/" },

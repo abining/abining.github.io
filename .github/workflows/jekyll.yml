@@ -42,6 +42,13 @@ jobs: # 工作任务
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+      - name: Inject Gitalk Secrets
+        env:
+          GITALK_CLIENT_ID: ${{ secrets.GITALK_CLIENT_ID }}
+          GITALK_CLIENT_SECRET: ${{ secrets.GITALK_CLIENT_SECRET }}
+        run: |
+          sed -i 's/GITALK_CLIENT_ID_PLACEHOLDER/'"$GITALK_CLIENT_ID"'/g' _config.yml
+          sed -i 's/GITALK_CLIENT_SECRET_PLACEHOLDER/'"$GITALK_CLIENT_SECRET"'/g' _config.yml
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
