@@ -101,7 +101,7 @@ gitalk:
 # ba_track_id: [your track id]
 
 # Google Analytics
-ga_track_id: "G-EG97VSS3RM" # Format: UA-xxxxxx-xx
+ga_track_id: "G-BCTH3KHQKN" # Format: UA-xxxxxx-xx
 ga_domain: www.195501.xyz
 
 # Sidebar settings
